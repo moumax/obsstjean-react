@@ -9,9 +9,9 @@ class AbstractManager {
     ]);
   }
 
-  findAll() {
-    return this.database.query(`select * from  ${this.table}`);
-  }
+  // findAll() {
+  //   return this.database.query(`select * from  ${this.table}`);
+  // }
 
   delete(id) {
     return this.database.query(`delete from ${this.table} where id = ?`, [id]);

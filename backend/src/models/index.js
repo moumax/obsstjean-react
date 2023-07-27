@@ -1,6 +1,9 @@
 require("dotenv").config();
 
 const mysql = require("mysql2/promise");
+const ItemManager = require("./ItemManager");
+const EventManager = require("./EventManager");
+const UserManager = require("./UserManager");
 
 // create a connection pool to the database
 
@@ -29,10 +32,13 @@ pool.getConnection().catch(() => {
 
 const models = {};
 
-const ItemManager = require("./ItemManager");
-
 models.item = new ItemManager();
 models.item.setDatabase(pool);
+
+models.event = new EventManager();
+models.event.setDatabase(pool);
+models.user = new UserManager();
+models.user.setDatabase(pool);
 
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model
