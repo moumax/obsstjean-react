@@ -1,0 +1,18 @@
+.container-header {
+    width: 90%;
+    background: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-header {
+    width: 30%;
+}
+
+.img-coupole-header {
+    width: 90%;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-radius: 0.75rem;
+}
