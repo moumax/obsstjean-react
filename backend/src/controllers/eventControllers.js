@@ -1,11 +1,9 @@
 const models = require("../models");
 
 const browse = (req, res) => {
-  models.item
+  models.event
     .findAll()
-    .then(([rows]) => {
-      res.send(rows);
-    })
+    .then((events) => res.send(events))
     .catch((err) => {
       console.error(err);
       res.sendStatus(500);
@@ -13,37 +11,16 @@ const browse = (req, res) => {
 };
 
 const read = (req, res) => {
-  models.item
+  models.event
     .find(req.params.id)
-    .then(([rows]) => {
-      if (rows[0] == null) {
+    .then((event) => {
+      if (event.length === 0) {
         res.sendStatus(404);
       } else {
-        res.send(rows[0]);
+        res.send(event);
       }
     })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
-};
 
-const edit = (req, res) => {
-  const item = req.body;
-
-  // TODO validations (length, format...)
-
-  item.id = parseInt(req.params.id, 10);
-
-  models.item
-    .update(item)
-    .then(([result]) => {
-      if (result.affectedRows === 0) {
-        res.sendStatus(404);
-      } else {
-        res.sendStatus(204);
-      }
-    })
     .catch((err) => {
       console.error(err);
       res.sendStatus(500);
@@ -51,14 +28,27 @@ const edit = (req, res) => {
 };
 
 const add = (req, res) => {
-  const item = req.body;
-
-  // TODO validations (length, format...)
-
-  models.item
-    .insert(item)
+  const newEvent = req.body;
+  models.event
+    .insert({ ...newEvent })
     .then(([result]) => {
-      res.location(`/items/${result.insertId}`).sendStatus(201);
+      res.status(201).send({ ...newEvent, id: result.insertId });
+    })
+
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
+const edit = (req, res) => {
+  const newEvent = req.body;
+
+  models.event
+    .update(newEvent, req.params.id)
+    .then(([result]) => {
+      if (result.affectedRows === 0) throw new Error("no change affected");
+      res.status(201).send({ ...newEvent });
     })
     .catch((err) => {
       console.error(err);
@@ -67,14 +57,10 @@ const add = (req, res) => {
 };
 
 const destroy = (req, res) => {
-  models.item
+  models.event
     .delete(req.params.id)
-    .then(([result]) => {
-      if (result.affectedRows === 0) {
-        res.sendStatus(404);
-      } else {
-        res.sendStatus(204);
-      }
+    .then(() => {
+      res.sendStatus(204);
     })
     .catch((err) => {
       console.error(err);
