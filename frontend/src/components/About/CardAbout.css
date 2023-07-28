@@ -1,0 +1,25 @@
+.cardAbout {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cardAbout-img {
+    height: 100px;
+    border-radius: 10px;
+}
+
+.cardAbout-title {
+    color: white;
+    opacity: 70%;
+    font-size: 1rem;
+}
+
+.cardAbout-text {
+    width: 100%;
+    text-align: center;
+    color: white;
+    opacity: 40%;
+    font-size: 0.8rem;
+}
