@@ -12,8 +12,10 @@ function Header() {
         src={logo}
         alt="observatoire de Saint Jean Le Blanc"
       />
-      <h1>Observatoire de Saint Jean Le Blanc</h1>
-      <h2>Association loi 1901 pour la promotion de l'astronomie amateur</h2>
+      <h1 className="title-header">Observatoire de Saint Jean Le Blanc</h1>
+      <h2 className="subtitle-header">
+        Association loi 1901 pour la promotion de l'astronomie amateur
+      </h2>
       <img
         className="img-coupole-header"
         src={coupole}

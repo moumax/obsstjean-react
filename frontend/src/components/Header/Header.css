@@ -1,18 +1,36 @@
 .container-header {
-    width: 90%;
-    background: red;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .img-header {
-    width: 30%;
+  width: 60%;
+  margin-top: 15%;
 }
 
 .img-coupole-header {
-    width: 90%;
-    margin-top: 1.25rem;
-    margin-bottom: 1.25rem;
-    border-radius: 0.75rem;
+  width: 90%;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-radius: 0.75rem;
+}
+
+.title-header {
+  font-size: 1.25rem;
+  font-family: "Exo 2", sans-serif;
+  background: -webkit-linear-gradient(#fffc08, #575506);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+}
+
+.subtitle-header {
+  color: white;
+  font-family: "Exo 2", sans-serif;
+  opacity: 50%;
+  font-size: 0.875rem;
+  text-align: center;
+  font-weight: 500;
 }
