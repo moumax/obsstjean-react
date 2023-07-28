@@ -1,0 +1,13 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-informations {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    opacity: 40%;
+    align-items: center;
+    font-size: 0.8rem;
+}
