@@ -1,0 +1,39 @@
+.section-contact {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.contact-title {
+  font-family: "Exo 2", sans-serif;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.contact-map {
+  height: 14rem;
+  width: 80%;
+  height: 40%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.contact-paragraph {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-methods {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+.contact-mail {
+    display: flex;
+    gap: 5px;
+}
