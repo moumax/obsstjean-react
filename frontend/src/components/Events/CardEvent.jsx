@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState, useContext, useReducer } from "react";
+import { useState, useReducer } from "react";
 import Modal from "react-modal";
 import { useSWRConfig } from "swr";
 import Moment from "react-moment";
@@ -7,10 +7,10 @@ import "moment/locale/fr";
 import { toast } from "react-toastify";
 import eventsReducer from "../../reducers/eventsReducer";
 import axiosAPI from "../../services/axiosAPI";
-import CurrentUserContext from "../../contexts/userContext";
+// import CurrentUserContext from "../../contexts/userContext";
 
-import editEvent from "../../assets/administration/editEvent.svg";
-import eraseEvent from "../../assets/administration/deleteEvent.svg";
+// import editEvent from "../../assets/administration/editEvent.svg";
+// import eraseEvent from "../../assets/administration/deleteEvent.svg";
 
 import "./CardEvent.css";
 
@@ -31,15 +31,15 @@ function CardEvent({ data }) {
   );
   // eslint-disable-next-line no-unused-vars
   const [userId, setUserId] = useState(data.userId);
-  const { user } = useContext(CurrentUserContext);
+  // const { user } = useContext(CurrentUserContext);
   const { mutate } = useSWRConfig();
-  const openModalModify = () => {
-    setIsOpen(true);
-  };
+  // const openModalModify = () => {
+  //   setIsOpen(true);
+  // };
 
-  const openModalDelete = () => {
-    setModalDeleteIsOpen(true);
-  };
+  // const openModalDelete = () => {
+  //   setModalDeleteIsOpen(true);
+  // };
   const closeModal = () => {
     setIsOpen(false);
   };
@@ -86,7 +86,7 @@ function CardEvent({ data }) {
     toast.success(`L'évènement ${data.title} a été supprimé`);
   };
 
-  const currentPage = window.location.pathname;
+  // const currentPage = window.location.pathname;
 
   const modalStyle = {
     overlay: {
