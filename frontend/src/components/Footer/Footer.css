@@ -1,6 +1,7 @@
 .footer {
     display: flex;
     flex-direction: column;
+    height: 50vh;
 }
 
 .footer-informations {
@@ -10,4 +11,16 @@
     opacity: 40%;
     align-items: center;
     font-size: 0.8rem;
+}
+
+.footer-button-login {
+    background: blue;
+    color: white;
+    font-size: 1rem;
+}
+
+.footer-button-logout {
+    background: red;
+    color: white;
+    font-size: 1rem;
 }
