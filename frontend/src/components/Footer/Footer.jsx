@@ -12,7 +12,7 @@ function Footer() {
 
   const handleDisconnect = () => {
     axiosAPI
-      .get("http://localhost:5000/api/auth/logout")
+      .get(`${import.meta.env.VITE_BACKEND_URL}/api/auth/logout`)
       .then(() => {
         localStorage.clear();
         setUser(undefined);

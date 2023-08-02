@@ -52,13 +52,16 @@ function CardEvent({ data }) {
     e.preventDefault();
 
     try {
-      await axiosAPI.put(`http://localhost:5000/api/event/${data.id}`, {
-        title: eventForm.title,
-        description: eventForm.description,
-        date: eventForm.date,
-        site: eventForm.site,
-        userId,
-      });
+      await axiosAPI.put(
+        `${import.meta.env.VITE_BACKEND_URL}/api/event/${data.id}`,
+        {
+          title: eventForm.title,
+          description: eventForm.description,
+          date: eventForm.date,
+          site: eventForm.site,
+          userId,
+        }
+      );
       mutate("events");
       closeModal();
       toast.success("Evènement mis à jour avec succès");
@@ -81,7 +84,9 @@ function CardEvent({ data }) {
     }
   };
   const deleteEvent = async () => {
-    await axiosAPI.delete(`http://localhost:5000/api/event/${data.id}`);
+    await axiosAPI.delete(
+      `${import.meta.env.VITE_BACKEND_URL}/api/event/${data.id}`
+    );
     mutate("events");
     toast.success(`L'évènement ${data.title} a été supprimé`);
   };

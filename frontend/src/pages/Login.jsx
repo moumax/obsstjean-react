@@ -19,7 +19,7 @@ export default function Login() {
 
     if (mail && password) {
       await axiosAPI
-        .post("http://localhost:5000/api/auth/login", {
+        .post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/login`, {
           mail,
           password,
         })

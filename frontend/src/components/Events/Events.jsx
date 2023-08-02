@@ -8,7 +8,10 @@ import fetcher from "../../api/fetcher";
 import "./Events.css";
 
 function Events() {
-  const { data, error } = useSWR("http://localhost:5000/api/event", fetcher);
+  const { data, error } = useSWR(
+    `${import.meta.env.VITE_BACKEND_URL}/api/event/`,
+    fetcher
+  );
 
   if (error) return <div>Une erreur est survenue: {error.message}</div>;
   if (!data)
