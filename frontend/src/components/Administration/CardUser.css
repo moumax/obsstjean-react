@@ -1,0 +1,47 @@
+.card-user-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-user {
+  width: 90vw;
+  margin-bottom: 0.25rem;
+  background-color: rgba(0, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 0.25rem;
+  font-family: "Exo 2", sans-serif;
+}
+
+.card-user-titles {
+  color: white;
+}
+
+.card-user-text {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-user-datas {
+  color: white;
+  opacity: 70%;
+  padding-left: 0.75rem;
+  font-size: 0.75rem;
+}
+
+.card-user-button-modify-user {
+  background: blue;
+}
+
+.card-user-button-cancel {
+  background: blue;
+}
+
+.card-user-button-delete-user {
+  background: blue;
+}
+
+.card-user-button-user {
+    width: 2rem;
+}

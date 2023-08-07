@@ -10,6 +10,7 @@ import About from "./components/About/About";
 import Weather from "./components/Weather/Weather";
 
 import Login from "./pages/Login";
+import Administration from "./pages/Administration";
 
 import "./App.css";
 
@@ -32,6 +33,7 @@ function App() {
           }
         />
         <Route path="login" element={<Login />} />
+        <Route path="administration" element={<Administration />} />
       </Routes>
     </div>
   );

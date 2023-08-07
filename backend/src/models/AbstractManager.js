@@ -9,12 +9,17 @@ class AbstractManager {
     ]);
   }
 
-  // findAll() {
-  //   return this.database.query(`select * from  ${this.table}`);
-  // }
+  // change adminId to the id of the administrator to avoid errors when deleting an old user
 
   delete(id) {
-    return this.database.query(`delete from ${this.table} where id = ?`, [id]);
+    const adminId = 3;
+    return (
+      this.database.query(
+        `UPDATE event SET userId = ${adminId} WHERE userId = ?`,
+        [id]
+      ),
+      this.database.query(`DELETE FROM ${this.table} WHERE id = ?`, [id])
+    );
   }
 
   setDatabase(database) {

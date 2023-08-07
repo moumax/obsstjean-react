@@ -7,7 +7,7 @@ import axiosAPI from "../../services/axiosAPI";
 import "./Footer.css";
 
 function Footer() {
-  const { setUser } = useContext(CurrentUserContext);
+  const { user, setUser } = useContext(CurrentUserContext);
   const navigate = useNavigate();
 
   const handleDisconnect = () => {
@@ -28,20 +28,33 @@ function Footer() {
         <p>Observatoire Astronomique de Saint Jean Le Blanc (V3.0.0)</p>
       </div>
       <div className="footer-buttons">
-        <button
-          className="footer-button-login"
-          type="submit"
-          onClick={() => navigate("/login")}
-        >
-          Login
-        </button>
-        <button
-          className="footer-button-logout"
-          type="submit"
-          onClick={() => handleDisconnect()}
-        >
-          Logout
-        </button>
+        {!user && (
+          <button
+            className="footer-button-login"
+            type="submit"
+            onClick={() => navigate("/login")}
+          >
+            Login
+          </button>
+        )}
+        {user && (
+          <>
+            <button
+              className="footer-button-logout"
+              type="submit"
+              onClick={() => handleDisconnect()}
+            >
+              Logout
+            </button>
+            <button
+              className="footer-button-administration"
+              type="submit"
+              onClick={() => navigate("/administration")}
+            >
+              Administration
+            </button>
+          </>
+        )}
       </div>
     </footer>
   );

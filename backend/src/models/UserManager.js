@@ -12,7 +12,7 @@ class UserManager extends AbstractManager {
     const joiObject = {
       mail: Joi.string().max(45).presence(this.presence),
       password: Joi.string().max(500).presence(this.presence),
-      role: Joi.string().max(15),
+      role: Joi.string().max(15).presence(this.presence),
       name: Joi.string().max(100).presence(this.presence),
     };
 
@@ -26,8 +26,8 @@ class UserManager extends AbstractManager {
 
   insert(user) {
     return this.database.query(
-      `insert into user (mail, password_hash, name) values (?, ?, ?)`,
-      [user.mail, user.password_hash, user.name]
+      `insert into user (mail, password_hash, name, role) values (?, ?, ?, ?)`,
+      [user.mail, user.password_hash, user.name, user.role]
     );
   }
 
@@ -46,10 +46,7 @@ class UserManager extends AbstractManager {
   }
 
   findByUserId(user, id) {
-    return this.connection.query(`select * from ${this.table} where id = ?`, [
-      user,
-      id,
-    ]);
+    return this.database.query(`select * from user where id = ?`, [user, id]);
   }
 }
 
