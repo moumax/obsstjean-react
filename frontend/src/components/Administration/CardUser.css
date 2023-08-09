@@ -45,3 +45,18 @@
 .card-user-button-user {
     width: 2rem;
 }
+
+.card-user-mail {
+  display: flex;
+  align-items: center;
+}
+
+.card-user-role {
+  display: flex;
+  align-items: center;
+}
+
+.card-user-prenom {
+  display: flex;
+  align-items: center;
+}

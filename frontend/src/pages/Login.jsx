@@ -28,6 +28,7 @@ export default function Login() {
           console.error("login", res.data);
           localStorage.setItem("user", JSON.stringify(res.data.mail));
           localStorage.setItem("role", JSON.stringify(res.data.role));
+          localStorage.setItem("idUser", JSON.stringify(res.data.id));
           navigate("/");
           toast.success("Vous êtes connecté !");
         });

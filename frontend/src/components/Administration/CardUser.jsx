@@ -86,12 +86,18 @@ function CardUser({ data }) {
       <div className="card-user">
         <div className=" card-user-text">
           <div>
-            <p className="card-user-titles">Email :</p>
-            <h3 className="card-user-datas">{data.mail}</h3>
-            <p className="card-user-titles">Role :</p>
-            <h3 className="card-user-datas">{data.role}</h3>
-            <p className="card-user-titles">Prénom :</p>
-            <h3 className="card-user-datas">{data.name}</h3>
+            <div className="card-user-mail">
+              <p className="card-user-titles">Email :</p>
+              <h3 className="card-user-datas">{data.mail}</h3>
+            </div>
+            <div className="card-user-role">
+              <p className="card-user-titles">Role :</p>
+              <h3 className="card-user-datas">{data.role}</h3>
+            </div>
+            <div className="card-user-prenom">
+              <p className="card-user-titles">Prénom :</p>
+              <h3 className="card-user-datas">{data.name}</h3>
+            </div>
           </div>
           <div className="self-center">
             {data && currentPage !== "/" && (

@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import UsersAdministration from "../components/Administration/UsersAdministration";
+import EventsAdministration from "../components/Administration/EventsAdministration";
 
 import "./Administration.css";
 
@@ -9,6 +10,7 @@ function Administration() {
   return (
     <section className="section-administration">
       <UsersAdministration />
+      <EventsAdministration />
       <button
         type="submit"
         className="administration-button"
