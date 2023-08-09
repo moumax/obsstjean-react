@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: obsstjeanreactdb
 -- ------------------------------------------------------
--- Server version	8.0.33-0ubuntu0.22.04.2
+-- Server version	8.0.33-0ubuntu0.22.04.4
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,7 @@ CREATE TABLE `event` (
   `id` int NOT NULL AUTO_INCREMENT,
   `title` varchar(150) NOT NULL,
   `description` varchar(500) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date` date NOT NULL,
   `site` varchar(100) NOT NULL,
   `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatedAt` timestamp NULL DEFAULT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE `event` (
 
 LOCK TABLES `event` WRITE;
 /*!40000 ALTER TABLE `event` DISABLE KEYS */;
-INSERT INTO `event` VALUES (5,'qsdqsd','qsdqsd','2023-07-27 21:31:21','qsdqsd','2023-07-27 21:31:21',NULL,4),(6,'Nuit des étoiles','C\'est la nuit des étoiles','2023-07-27 21:32:00','Observatoire de Saint Jean Le Blanc','2023-07-27 21:32:00',NULL,3),(7,'de la science','C\'est la fête de la science','2023-07-26 22:00:00','université','2023-07-26 22:00:00',NULL,3);
+INSERT INTO `event` VALUES (6,'Nuit des étoiles','C\'est la nuit des étoiles','2023-07-27','Observatoire de Saint Jean Le Blanc','2023-07-27 21:32:00',NULL,3),(7,'de la science','C\'est la fête de la science','2023-07-27','université','2023-07-26 22:00:00',NULL,3);
 /*!40000 ALTER TABLE `event` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -61,7 +61,7 @@ CREATE TABLE `user` (
   `role` varchar(15) DEFAULT NULL,
   `name` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,7 +70,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (3,'marc.lantol@gmail.com','$argon2id$v=19$m=65536,t=5,p=1$/sknbq38rl8JNt3LpCir/A$BG84LcBBkOR4idKHVMJo75W9Z7nJU3khMDzvNH1EZIk','administrateur','marc'),(4,'toto@gmail.com','$argon2id$v=19$m=65536,t=5,p=1$Yk+JvnZgmRTTuU2dHKT6Ng$K59GfMt74O2I03N40icpDxwrX9z2YJwEiWxXdVXpwNk',NULL,'tonton');
+INSERT INTO `user` VALUES (3,'marc.lantol@gmail.com','$argon2id$v=19$m=65536,t=5,p=1$/sknbq38rl8JNt3LpCir/A$BG84LcBBkOR4idKHVMJo75W9Z7nJU3khMDzvNH1EZIk','administrateur','marc'),(6,'hubert.mauri@gmail.com','$argon2id$v=19$m=65536,t=5,p=1$bW5fdNL3gltvymI1pUbCCA$fB1DEBjXLmd83eKCCFVsKRtdLXN8pVGYXLneZtF/xDU','redacteur','Hubert'),(7,'richard.cauchois@gmail.com','$argon2id$v=19$m=65536,t=5,p=1$K+evxNpS8VdqSEyorR63Yg$120ZWl17ueTivxrbHnqg7e2n9F52CxJU1iZqI0ZUO7U','photographe','Richard');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -87,4 +87,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-07-27 23:53:47
+-- Dump completed on 2023-08-09 16:13:55

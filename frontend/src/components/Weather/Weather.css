@@ -1,0 +1,101 @@
+:root {
+  --width-icon: 1.7rem;
+}
+
+.weather-section {
+    width: 90%;
+    max-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.7rem;
+}
+
+.weather-first-division {
+    display: flex;
+    gap: 1rem;
+}
+
+.weather-second-division {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.weather-third-division {
+    display: flex;
+    align-items: center;
+    color: white;
+    gap: 0.5rem;
+}
+
+.weather-moon-icon {
+    width: var(--width-icon);
+    height: 2.5rem;
+}
+
+.weather-temperature-low {
+    color: blue;
+    width: var(--width-icon);
+    height: 2.5rem;
+}
+
+.weather-temperature-medium {
+    color: yellow;
+    width: var(--width-icon);
+    height: 2.5rem;
+}
+
+.weather-temperature-hot {
+    color: red;
+    width: var(--width-icon);
+    height: 2.5rem;
+}
+
+.weather-condition {
+    color: white;
+    width: var(--width-icon);
+    height: 2.5rem;
+}
+
+.weather-humidity-icon {
+  color: aqua;
+  width: var(--width-icon);
+  height: 2.5rem;
+}
+
+.weather-wind {
+  color: white;
+  width: var(--width-icon);
+  height: 2.5rem;
+}
+.weather-wind-direction-icon {
+  color: blue;
+  width: var(--width-icon);
+  height: 2.5rem;
+}
+
+.weather-lunar-icon {
+  color: white;
+  width: var(--width-icon);
+  height: 2.5rem;
+}
+
+.weather-sunrise-icon {
+  color: yellow;
+  width: var(--width-icon);
+  height: 2.5rem;
+}
+
+.weather-sunset-icon {
+  color: orange;
+  width: var(--width-icon);
+  height: 2.5rem;
+}
+
+.weather-moonrise-icon {
+  color: gray;
+  width: var(--width-icon);
+  height: 2.5rem;
+}

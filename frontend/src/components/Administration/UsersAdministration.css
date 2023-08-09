@@ -1,0 +1,25 @@
+.user-administration-container {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.user-administration-title {
+    color: white;
+    font-family: "Exo 2", sans-serif;
+}
+
+.user-administration-button-save {
+    background: blue;
+}
+
+.user-administration-button-close {
+    background: blue;
+}
+
+.user-administration-button-add {
+    width: 2rem;
+}

@@ -1,0 +1,33 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  height: 20vh;
+}
+
+.footer-informations {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  opacity: 40%;
+  align-items: center;
+  font-size: 0.8rem;
+  font-family: "Exo 2", sans-serif;
+}
+
+.footer-button-login {
+  background: blue;
+  color: white;
+  font-size: 1rem;
+}
+
+.footer-button-logout {
+  background: red;
+  color: white;
+  font-size: 1rem;
+}
+
+.footer-button-administration {
+  background: green;
+  color: white;
+  font-size: 1rem;
+}

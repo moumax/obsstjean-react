@@ -1,0 +1,17 @@
+.section-observatoire {
+    width: 90%;
+    height: 100vh;
+}
+
+.observatoire-title {
+    color: white;
+    font-family: "Exo 2", sans-serif;
+    text-align: center;
+}
+
+.observatoire-paragraph {
+    color: white;
+    font-family: "Exo 2", sans-serif;
+    text-align: justify;
+    opacity: 60%;
+}
