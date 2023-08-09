@@ -125,12 +125,12 @@ function CardEvent({ data }) {
         }`}
       >
         <div className="card-event-subcontainer">
-          <div className="card-event-date">
-            <Moment locale="fr" format="LL">
+          <div className="card-event-date-title">
+            <Moment locale="fr" format="LL" className="card-event-date">
               {data.date}
             </Moment>
+            <h3 className="card-event-titles">{data.title}</h3>
           </div>
-          <h3 className="card-event-titles">{data.title}</h3>
           <p className="card-event-description">{data.description}</p>
           <div className="card-event-site-container">
             <p className="cardEventSiteText">A quel endroit ?</p>

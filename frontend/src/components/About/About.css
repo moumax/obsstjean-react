@@ -1,19 +1,21 @@
-.section-title {
-    font-family: "Exo 2", sans-serif;
-    color: white;
-}
-
 .section-about {
     width: 90%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: "Exo 2", sans-serif;
 }
 
+.section-title {
+    font-family: "Exo 2", sans-serif;
+    color: white;
+}
+
 .about-card-display {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
+    gap: 10px;
 }

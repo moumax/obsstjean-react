@@ -22,6 +22,11 @@
     margin-right: 10px;
 }
 
+.card-event-date-title {
+  display: flex;
+  justify-content: space-around;
+}
+
 .card-event-date {
     color: white;
     opacity: 50%;
@@ -30,12 +35,12 @@
 
 .card-event-titles {
   color: yellow;
+  font-size: 1rem;
 }
 
 .card-event-description {
   color: white;
   opacity: 50%;
-  padding-top: 0.5rem;
 }
 
 .card-event-site-container {
