@@ -99,3 +99,9 @@
   width: var(--width-icon);
   height: 2.5rem;
 }
+
+.sky-of-month-container {
+  width: 80vw;
+  height: 90vh;
+  background: red;
+}
