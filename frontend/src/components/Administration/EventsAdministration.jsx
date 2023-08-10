@@ -10,6 +10,8 @@ import sortedByDate from "../../utils/date";
 import addEvent from "../../assets/administration/addEvent.svg";
 import fetcher from "../../api/fetcher";
 
+import "./EventsAdministration.css";
+
 Modal.setAppElement("#root");
 
 export default function EventsAdministration() {
@@ -103,19 +105,22 @@ export default function EventsAdministration() {
   };
 
   return (
-    <section className="w-[90vw] mt-10 flex flex-col items-center ">
-      <h2 className="text-2xl text-white font-exo2">
-        Calendrier des évènements
-      </h2>
-      <button
-        className="self-end pt-6 pb-6"
-        type="button"
-        onClick={openModalAdd}
-      >
-        <img className="w-[15vw]" src={addEvent} alt="add an event" />
-        <span />
-      </button>
-
+    <section className="event-administration-container">
+      <h2 className="event-administration-title">Calendrier des évènements</h2>
+      <div className="event-administration-button-add-container">
+        <button
+          className="event-administration-button-add"
+          type="button"
+          onClick={openModalAdd}
+        >
+          <img
+            className="event-administration-button-add-svg"
+            src={addEvent}
+            alt="add an event"
+          />
+          <span />
+        </button>
+      </div>
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}

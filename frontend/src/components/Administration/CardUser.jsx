@@ -85,35 +85,33 @@ function CardUser({ data }) {
     <div className="card-user-container">
       <div className="card-user">
         <div className=" card-user-text">
-          <div>
-            <div className="card-user-mail">
-              <p className="card-user-titles">Email :</p>
-              <h3 className="card-user-datas">{data.mail}</h3>
-            </div>
-            <div className="card-user-role">
-              <p className="card-user-titles">Role :</p>
-              <h3 className="card-user-datas">{data.role}</h3>
-            </div>
-            <div className="card-user-prenom">
-              <p className="card-user-titles">Prénom :</p>
-              <h3 className="card-user-datas">{data.name}</h3>
-            </div>
+          <div className="card-user-division">
+            <p>Email :</p>
+            <h3 className="card-user-datas">{data.mail}</h3>
+          </div>
+          <div className="card-user-division">
+            <p>Role :</p>
+            <h3 className="card-user-datas">{data.role}</h3>
+          </div>
+          <div className="card-user-division">
+            <p>Prénom :</p>
+            <h3 className="card-user-datas">{data.name}</h3>
           </div>
           <div className="self-center">
             {data && currentPage !== "/" && (
-              <div className="flex gap-2 justify-end pt-4">
-                <button type="submit" onClick={() => openModalModify()}>
-                  <img
-                    className="card-user-button-user"
-                    src={editUser}
-                    alt="Editer un utilisateur"
-                  />
+              <div className="card-user-block-buttons">
+                <button
+                  className="card-user-button-user-edit"
+                  type="submit"
+                  onClick={() => openModalModify()}
+                >
+                  <img src={editUser} alt="Editer un utilisateur" />
                   <span />
                 </button>
                 <button
                   type="submit"
                   onClick={() => openModalDelete()}
-                  className="card-user-button-user"
+                  className="card-user-button-user-delete"
                 >
                   <img src={deleteUser} alt="Supprimer un utilisateur" />
                   <span />
