@@ -88,14 +88,14 @@ export default function UsersAdministration() {
   return (
     <section className="user-administration-container">
       <h2 className="user-administration-title">Liste des utilisateurs</h2>
-      <div className="flex self-end py-4">
+      <div className="user-administration-button-add-container">
         <button
-          className="self-end pt-6 pb-6"
+          className="user-administration-button-add"
           type="button"
           onClick={openModalAdd}
         >
           <img
-            className="user-administration-button-add"
+            className="user-administration-button-add-svg"
             src={addUser}
             alt="add a user"
           />

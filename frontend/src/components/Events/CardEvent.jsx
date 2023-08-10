@@ -141,8 +141,12 @@ function CardEvent({ data }) {
         </div>
 
         {user && currentPage !== "/" && (
-          <div className="flex gap-2 justify-end pt-4 pb-2">
-            <button type="submit" onClick={() => openModalModify()}>
+          <div className="card-event-block-buttons">
+            <button
+              type="submit"
+              onClick={() => openModalModify()}
+              className="card-event-button-event-edit"
+            >
               <img
                 className="w-[8vw]"
                 src={editEvent}
@@ -153,7 +157,7 @@ function CardEvent({ data }) {
             <button
               type="submit"
               onClick={() => openModalDelete()}
-              className="w-[8vw]"
+              className="card-event-button-event-delete"
             >
               <img src={eraseEvent} alt="Supprimer un évènement" />
               <span />
