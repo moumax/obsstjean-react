@@ -36,6 +36,7 @@ import { BiCloudRain } from "react-icons/bi";
 // import { IoThunderstormSharp } from "react-icons/io";
 
 import "./Weather.css";
+import ModalSkyOfMonth from "./ModalSkyOfMonth";
 
 function Weather() {
   const [sunrise, setSunrise] = useState();
@@ -52,6 +53,8 @@ function Weather() {
   const [condition, setCondition] = useState();
   // eslint-disable-next-line no-unused-vars
   const [conditionIcon, setConditionIcon] = useState();
+
+  const [show, setShow] = useState(false);
 
   function convertTimeTo24(time) {
     const [timeStr, period] = time.split(" ");
@@ -241,6 +244,10 @@ function Weather() {
           {moonset}
         </div>
       </div>
+      <button onClick={() => setShow(true)} type="submit">
+        Ciel du mois
+      </button>
+      <ModalSkyOfMonth onClose={() => setShow(false)} show={show} />
     </section>
     // <>
     //   <section className="weather-first-section">
