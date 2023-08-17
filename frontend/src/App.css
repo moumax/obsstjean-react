@@ -49,3 +49,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+.classTitles {
+	color: white;
+	font-family: "Exo 2", sans-serif;
+	font-size: 1.25rem;
+	margin: 2rem 0}
