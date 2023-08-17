@@ -9,7 +9,7 @@ import "./About.css";
 function About() {
   return (
     <section className="section-about">
-      <h1 className="section-title">Nos activités</h1>
+      <h1 className="classTitles">Nos activités</h1>
       <div className="about-card-display">
         <Carousel
           infiniteLoop
