@@ -36,7 +36,6 @@ import { BiCloudRain } from "react-icons/bi";
 // import { IoThunderstormSharp } from "react-icons/io";
 
 import "./Weather.css";
-import ModalSkyOfMonth from "./ModalSkyOfMonth";
 
 function Weather() {
   const [sunrise, setSunrise] = useState();
@@ -53,8 +52,6 @@ function Weather() {
   const [condition, setCondition] = useState();
   // eslint-disable-next-line no-unused-vars
   const [conditionIcon, setConditionIcon] = useState();
-
-  const [show, setShow] = useState(false);
 
   function convertTimeTo24(time) {
     const [timeStr, period] = time.split(" ");
@@ -102,14 +99,14 @@ function Weather() {
     switch (condition) {
       case "Sunny":
       case "Clear":
-        return <BsSun className="weather-condition" />;
+        return <BsSun className="classWeatherCondition" />;
       case "Partly cloudy":
-        return <BsCloudSun className="weather-condition" />;
+        return <BsCloudSun className="classWeatherCondition" />;
       case "Cloudy":
       case "Overcast":
-        return <AiOutlineCloud className="weather-condition" />;
+        return <AiOutlineCloud className="classWeatherCondition" />;
       case "Mist":
-        return <RiMistFill className="weather-condition" />;
+        return <RiMistFill className="classWeatherCondition" />;
       case "Patchy rain possible":
       case "Patchy light rain":
       case "Light rain":
@@ -126,7 +123,7 @@ function Weather() {
       case "Torrential rain shower":
       case "Light sleet showers":
       case "Moderate or heavy sleet showers":
-        return <FaCloudSunRain className="weather-condition" />;
+        return <FaCloudSunRain className="classWeatherCondition" />;
       case "Patchy snow possible":
       case "Patchy light snow":
       case "Light snow":
@@ -139,122 +136,112 @@ function Weather() {
       case "Moderate or heavy snow showers":
       case "Light showers of ice pellets":
       case "Moderate or heavy showers of ice pellets":
-        return <WiDaySnow className="weather-condition" />;
+        return <WiDaySnow className="classWeatherCondition" />;
       case "Patchy sleet possible":
-        return <WiDaySnow className="weather-condition" />;
+        return <WiDaySnow className="classWeatherCondition" />;
       case "Patchy freezing drizzle possible":
-        return <BsThermometerSnow className="weather-condition" />;
+        return <BsThermometerSnow className="classWeatherCondition" />;
       case "Thundery outbreaks possible":
-        return <WiDayThunderstorm className="weather-condition" />;
+        return <WiDayThunderstorm className="classWeatherCondition" />;
       case "Blowing snow":
-        return <BsCloudSnow className="weather-condition" />;
+        return <BsCloudSnow className="classWeatherCondition" />;
       case "Blizzard":
-        return <RiCloudWindyLine className="weather-condition" />;
+        return <RiCloudWindyLine className="classWeatherCondition" />;
       case "Fog":
       case "Freezing fog":
-        return <BsCloudFog className="weather-condition" />;
+        return <BsCloudFog className="classWeatherCondition" />;
       case "Patchy light drizzle":
       case "Light drizzle":
-        return <BsCloudRain className="weather-condition" />;
+        return <BsCloudRain className="classWeatherCondition" />;
       case "Freezing drizzle":
       case "Heavy freezing drizzle":
-        return <BiCloudRain className="weather-condition" />;
+        return <BiCloudRain className="classWeatherCondition" />;
       case "Patchy light rain with thunder":
       case "Moderate or heavy rain with thunder":
-        return <WiThunderstorm className="weather-condition" />;
+        return <WiThunderstorm className="classWeatherCondition" />;
       case "Patchy light snow with thunder":
       case "Moderate or heavy snow with thunder":
-        return <WiDaySnowThunderstorm className="weather-condition" />;
+        return <WiDaySnowThunderstorm className="classWeatherCondition" />;
       default:
-        return <BsSun className="weather-condition" />;
+        return <BsSun className="classWeatherCondition" />;
     }
   };
 
   const lunarIcon = () => {
     switch (moonphase) {
       case "New Moon":
-        return <WiMoonNew className="weather-moon-icon" />;
+        return <WiMoonNew className="classWeatherMoonIcon" />;
       case "First Quarter":
-        return <WiMoonAltFirstQuarter className="weather-moon-icon" />;
+        return <WiMoonAltFirstQuarter className="classWeatherMoonIcon" />;
       case "Last Quarter":
-        return <WiMoonAltThirdQuarter className="weather-moon-icon" />;
+        return <WiMoonAltThirdQuarter className="classWeatherMoonIcon" />;
       case "Waxing Crescent":
-        return <WiMoonAltWaxingCrescent5 className="weather-moon-icon" />;
+        return <WiMoonAltWaxingCrescent5 className="classWeatherMoonIcon" />;
       case "Waning Crescent":
-        return <WiMoonAltWaningCrescent5 className="weather-moon-icon" />;
+        return <WiMoonAltWaningCrescent5 className="classWeatherMoonIcon" />;
       case "Waxing Gibbous":
-        return <WiMoonAltWaxingGibbous2 className="weather-moon-icon" />;
+        return <WiMoonAltWaxingGibbous2 className="classWeatherMoonIcon" />;
       case "Waning Gibbous":
-        return <WiMoonAltWaningGibbous2 className="weather-moon-icon" />;
+        return <WiMoonAltWaningGibbous2 className="classWeatherMoonIcon" />;
       default:
-        return <WiMoonFull className="weather-moon-icon" />;
+        return <WiMoonFull className="classWeatherMoonIcon" />;
     }
   };
 
   function temperatureIconColor() {
     if (temperature > "28") {
-      return "weather-temperature-hot";
+      return "classWeatherTemperatureHot";
     }
     if (temperature < "28" && temperature >= "20") {
-      return "weather-temperature-medium";
+      return "classWeatherTemperatureMedium";
     }
-    return "weather-temperature-low";
+    return "classWeatherTemperatureLow";
   }
 
   return (
-    <section className="weather-section">
-      <div className="weather-first-division">
-        <div className="weather-second-division">{conditionPicture()}</div>
-        <div className="weather-second-division">
+    <section className="classWeatherSection">
+      <div className="classWeatherFirstDivision">
+        <div className="classWeatherSecondDivision">{conditionPicture()}</div>
+        <div className="classWeatherSecondDivision">
           <FaTemperatureLow className={temperatureIconColor()} />
           {`${temperature} °C`}
         </div>
-        <div className="weather-second-division">
-          <WiHumidity className="weather-humidity-icon" />
+        <div className="classWeatherSecondDivision">
+          <WiHumidity className="classWeatherHumidityIcon" />
           {`${humidity} %`}
         </div>
-        <div className="weather-second-division">
-          <BsWind className="weather-wind" />
+        <div className="classWeatherSecondDivision">
+          <BsWind className="classWeatherWindIcon" />
           {`${wind} km/h`}
         </div>
-        <div className="weather-second-division">
-          <WiWindDeg className="weather-wind-direction-icon" />
+        <div className="classWeatherSecondDivision">
+          <WiWindDeg className="classWeatherWindDirectionIcon" />
           {windDirection}
         </div>
-        <div className="weather-second-division">
-          <div className="weather-lunar-icon">{lunarIcon()}</div>
-          <div className="text-white">{`${illumination} %`}</div>
+        <div className="classWeatherSecondDivision">
+          <div className="classWeatherLunarIcon">{lunarIcon()}</div>
+          <div>{`${illumination} %`}</div>
         </div>
       </div>
-      <div className="weather-first-division">
-        <div className="weather-third-division">
-          <BsSunrise className="weather-sunrise-icon" />
+      <div className="classWeatherFirstDivision">
+        <div className="classWeatherThirdDivision">
+          <BsSunrise className="classWeatherSunriseIcon" />
           {sunrise}
         </div>
-        <div className="weather-third-division">
-          <BsSunset className="weather-sunset-icon" />
+        <div className="classWeatherThirdDivision">
+          <BsSunset className="classWeatherSunsetIcon" />
           {sunset}
         </div>
-        <div className="weather-third-division">
-          <WiMoonrise className="weather-moonrise-icon" />
+        <div className="classWeatherThirdDivision">
+          <WiMoonrise className="classWeatherMoonriseIcon" />
           {moonrise}
         </div>
-        <div className="weather-third-division">
-          <WiMoonset className="weather-moonrise-icon" />
+        <div className="classWeatherThirdDivision">
+          <WiMoonset className="classWeatherMoonsetIcon" />
           {moonset}
         </div>
       </div>
-      <button onClick={() => setShow(true)} type="submit">
-        Ciel du mois
-      </button>
-      <ModalSkyOfMonth onClose={() => setShow(false)} show={show} />
     </section>
-    // <>
-    //   <section className="weather-first-section">
-    //     <div className="text-white flex items-center gap-4">
-    //       {conditionPicture()}
-
-    //     </div>
   );
 }
 
