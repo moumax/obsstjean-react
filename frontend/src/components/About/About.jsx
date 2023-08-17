@@ -15,7 +15,7 @@ function About() {
           infiniteLoop
           autoPlay
           interval={4000}
-          showStatus
+          showStatus={false}
           showIndicators
           showThumbs={false}
           className="about-card-carousel"

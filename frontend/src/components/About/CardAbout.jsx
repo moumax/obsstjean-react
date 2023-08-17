@@ -6,9 +6,9 @@ import "./CardAbout.css";
 function CardAbout({ data }) {
   return (
     <div className="cardAbout">
+      <h3 className="classAboutTitle">{data.title}</h3>
       <img className="cardAbout-img" src={data.image} alt={data.alt} />
-      <h3 className="cardAbout-title">{data.title}</h3>
-      <p className="cardAbout-text">{data.textFr}</p>
+      <p className="classAboutText">{data.textFr}</p>
     </div>
   );
 }

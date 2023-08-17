@@ -3,7 +3,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 60vh;
+}
+
+.classAboutTitle {
+    color: yellow;
+    opacity: 70%;
+    font-size: 1rem;
+    margin: 2vw ;
+    margin-bottom: 10vw;
 }
 
 .cardAbout-img {
@@ -12,17 +19,11 @@
     border-radius: 10px;
 }
 
-.cardAbout-title {
-    color: white;
-    opacity: 70%;
-    font-size: 1rem;
-    margin: 2vw ;
-}
-
-.cardAbout-text {
-    width: 100%;
+.classAboutText {
+    width: 90%;
     text-align: center;
     color: white;
     opacity: 40%;
-    font-size: 0.8rem;
+    font-size: 1rem;
+    margin-top: 10vh;
 }

@@ -20,7 +20,6 @@ import {
   WiMoonAltThirdQuarter,
   WiMoonAltWaningCrescent5,
   WiMoonAltWaningGibbous2,
-  WiMoonAltWaxingCrescent5,
   WiMoonAltWaxingGibbous2,
   WiMoonFull,
   WiMoonNew,
@@ -28,6 +27,7 @@ import {
   WiMoonset,
   WiWindDeg,
   WiThunderstorm,
+  WiMoonWaxingCrescent1,
 } from "react-icons/wi";
 import { FaCloudSunRain, FaTemperatureLow } from "react-icons/fa";
 import { AiOutlineCloud } from "react-icons/ai";
@@ -176,7 +176,7 @@ function Weather() {
       case "Last Quarter":
         return <WiMoonAltThirdQuarter className="classWeatherMoonIcon" />;
       case "Waxing Crescent":
-        return <WiMoonAltWaxingCrescent5 className="classWeatherMoonIcon" />;
+        return <WiMoonWaxingCrescent1 className="classWeatherMoonIcon" />;
       case "Waning Crescent":
         return <WiMoonAltWaningCrescent5 className="classWeatherMoonIcon" />;
       case "Waxing Gibbous":
