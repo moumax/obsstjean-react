@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
 import Events from "./components/Events/Events";
 import Contact from "./components/Contact/Contact";
 import About from "./components/About/About";
@@ -46,7 +45,6 @@ function App() {
               <About />
               <Events />
               <Contact />
-              <Footer />
             </>
           }
         />
