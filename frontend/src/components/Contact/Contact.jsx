@@ -21,7 +21,7 @@ function Contact() {
   });
 
   return (
-    <section className="section-contact">
+    <section id="contact" className="section-contact">
       <h1 className="classTitles">Nous contacter</h1>
 
       <MapContainer
