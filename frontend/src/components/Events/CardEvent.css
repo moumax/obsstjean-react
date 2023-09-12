@@ -11,15 +11,16 @@
 }
 
 .card-event-past-date {
-  border: solid red 1px;}
+  border: dotted red 1px;
+}
 
 .card-event-future-date {
-  border: solid green 1px;
+  border: dotted green 1px;
 }
 
 .card-event-subcontainer {
-    margin-left: 10px;
-    margin-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .card-event-date-title {
@@ -31,9 +32,9 @@
 }
 
 .card-event-date {
-    color: white;
-    opacity: 50%;
-    font-size: 0.75rem;
+  color: white;
+  opacity: 50%;
+  font-size: 0.75rem;
 }
 
 .card-event-titles {
@@ -71,32 +72,11 @@
   justify-content: end;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .cardEventDateTitleMain {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-
-
-
 
 .cardEventSiteText {
   color: white;
