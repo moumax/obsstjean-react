@@ -1,4 +1,4 @@
-// import { useContext } from "react";
+import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header/Header";
@@ -13,6 +13,28 @@ import Administration from "./pages/Administration";
 import "./App.css";
 
 function App() {
+  useEffect(() => {
+    const preventMouseScroll = (event) => {
+      event.preventDefault();
+    };
+
+    window.addEventListener("wheel", preventMouseScroll, { passive: false });
+
+    return () => {
+      window.removeEventListener("wheel", preventMouseScroll);
+      const preventTouchSwipe = (event) => {
+        event.preventDefault();
+      };
+
+      window.addEventListener("touchmove", preventTouchSwipe, {
+        passive: false,
+      });
+      return () => {
+        window.removeEventListener("touchmove", preventTouchSwipe);
+      };
+    };
+  }, []);
+
   return (
     <div className="app">
       <Routes>
