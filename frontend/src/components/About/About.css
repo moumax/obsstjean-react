@@ -18,7 +18,7 @@
 
 .about-card-carousel {
   position: relative;
-  display:flex;
+  display: flex;
   width: 100%;
   height: 100%;
 }
@@ -28,7 +28,7 @@
 }
 
 .carousel .control-prev.control-arrow:before {
-  content: '';
+  content: "";
   border: solid yellow;
   border-width: 0 4px 4px 0;
   display: inline-block;
@@ -39,7 +39,7 @@
 }
 
 .carousel .control-next.control-arrow:before {
-  content: '';
+  content: "";
   border: solid yellow;
   border-width: 0 4px 4px 0;
   display: inline-block;
@@ -49,21 +49,20 @@
   -webkit-transform: rotate(-45deg);
 }
 
-.carousel .control-next.control-arrow  {
+.carousel .control-next.control-arrow {
   background: transparent;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.carousel .control-next.control-arrow:hover  {
+.carousel .control-next.control-arrow:hover {
   background: transparent;
 }
 
-
-.carousel .control-prev.control-arrow  {
+.carousel .control-prev.control-arrow {
   background: transparent;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.carousel .control-prev.control-arrow:hover  {
+.carousel .control-prev.control-arrow:hover {
   background: transparent;
 }
