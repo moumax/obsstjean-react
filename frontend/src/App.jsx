@@ -13,24 +13,18 @@ import "./App.css";
 
 function App() {
   useEffect(() => {
-    const preventMouseScroll = (event) => {
+    const preventSwipeScroll = (event) => {
       event.preventDefault();
     };
 
-    window.addEventListener("wheel", preventMouseScroll, { passive: false });
+    window.addEventListener("wheel", preventSwipeScroll, { passive: false });
+    window.addEventListener("touchmove", preventSwipeScroll, {
+      passive: false,
+    });
 
     return () => {
-      window.removeEventListener("wheel", preventMouseScroll);
-      const preventTouchSwipe = (event) => {
-        event.preventDefault();
-      };
-
-      window.addEventListener("touchmove", preventTouchSwipe, {
-        passive: false,
-      });
-      return () => {
-        window.removeEventListener("touchmove", preventTouchSwipe);
-      };
+      window.removeEventListener("wheel", preventSwipeScroll);
+      window.removeEventListener("touchmove", preventSwipeScroll);
     };
   }, []);
 
