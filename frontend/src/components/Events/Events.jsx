@@ -26,7 +26,7 @@ function Events() {
       </div>
     );
   return (
-    <section className="events-container">
+    <section id="calendar" className="events-container">
       <h2 className="classTitles">Calendrier des evènements</h2>
       {sortedByDate(data).map((event) => (
         <div key={event.id}>

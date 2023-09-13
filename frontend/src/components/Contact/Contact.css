@@ -9,7 +9,6 @@
 .classContactMap {
   height: 14rem;
   width: 90%;
-  height: 60%;
   overflow: hidden;
   border-radius: 10px;
   margin-bottom: 3vh;
@@ -21,6 +20,7 @@
   align-items: center;
   color: white;
   font-family: "Exo 2", sans-serif;
+  margin-bottom: 4rem;
 }
 
 .contact-methods {

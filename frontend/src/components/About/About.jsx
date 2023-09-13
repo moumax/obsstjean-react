@@ -8,7 +8,7 @@ import "./About.css";
 
 function About() {
   return (
-    <section className="section-about">
+    <section id="activity" className="section-about">
       <h1 className="classTitles">Nos activités</h1>
       <div className="about-card-display">
         <Carousel

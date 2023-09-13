@@ -5,6 +5,7 @@ import { AiOutlineFacebook } from "react-icons/ai";
 import { SiMaildotru } from "react-icons/si";
 import { GoMail } from "react-icons/go";
 
+import Footer from "../Footer/Footer";
 import iconUrl from "../../assets/contact/marker.webp";
 
 import "./Leaflet.css";
@@ -21,7 +22,7 @@ function Contact() {
   });
 
   return (
-    <section className="section-contact">
+    <section id="contact" className="section-contact">
       <h1 className="classTitles">Nous contacter</h1>
 
       <MapContainer
@@ -60,6 +61,7 @@ function Contact() {
           </div>
         </div>
       </div>
+      <Footer />
     </section>
   );
 }

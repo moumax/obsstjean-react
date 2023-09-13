@@ -1,8 +1,7 @@
-// import { useContext } from "react";
-import { Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
 import Events from "./components/Events/Events";
 import Contact from "./components/Contact/Contact";
 import About from "./components/About/About";
@@ -13,6 +12,27 @@ import Administration from "./pages/Administration";
 import "./App.css";
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const preventSwipeScroll = (event) => {
+      event.preventDefault();
+    };
+    if (location.pathname !== "/administration") {
+      window.addEventListener("wheel", preventSwipeScroll, { passive: false });
+      window.addEventListener("touchmove", preventSwipeScroll, {
+        passive: false,
+      });
+    }
+
+    return () => {
+      if (location.pathname !== "/administration") {
+        window.removeEventListener("wheel", preventSwipeScroll);
+        window.removeEventListener("touchmove", preventSwipeScroll);
+      }
+    };
+  }, [location.pathname]);
+
   return (
     <div className="app">
       <Routes>
@@ -24,7 +44,6 @@ function App() {
               <About />
               <Events />
               <Contact />
-              <Footer />
             </>
           }
         />

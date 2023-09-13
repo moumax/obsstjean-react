@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { BiLogoJavascript, BiLogoReact } from "react-icons/bi";
 import { SiMysql } from "react-icons/si";
+import { TbLogout } from "react-icons/tb";
+import { RiAdminLine } from "react-icons/ri";
+import { LuLogIn } from "react-icons/lu";
 import CurrentUserContext from "../../contexts/userContext";
 import axiosAPI from "../../services/axiosAPI";
 
@@ -42,28 +45,28 @@ function Footer() {
       <div className="footer-buttons">
         {!user && (
           <button
-            className="footer-button-login"
+            className="footer-buttons"
             type="submit"
             onClick={() => navigate("/login")}
           >
-            Login
+            <LuLogIn size="2rem" color="white" />
           </button>
         )}
         {user && (
           <>
             <button
-              className="footer-button-logout"
+              className="footer-buttons"
               type="submit"
               onClick={() => handleDisconnect()}
             >
-              Logout
+              <TbLogout size="2rem" color="white" />
             </button>
             <button
-              className="footer-button-administration"
+              className="footer-buttons"
               type="submit"
               onClick={() => navigate("/administration")}
             >
-              Administration
+              <RiAdminLine size="2rem" color="white" />
             </button>
           </>
         )}
