@@ -12,12 +12,23 @@
   margin-top: 1rem;
   position: fixed;
   margin-right: 1rem;
+  z-index: 9999;
 }
 .classNav {
   display: flex;
+  align-items: center;
+  padding-right: 0.5rem;
   color: white;
   gap: 10px;
-  z-index: 9999;
+}
+
+.classActive {
+  color: orange;
+  transform: scale(1.3);
+}
+
+.classInactive {
+  color: white;
 }
 
 .classHeaderLogoTitle {
@@ -36,6 +47,8 @@
 .classHeaderTitle {
   font-size: 1.25rem;
   font-family: "Exo 2", sans-serif;
+  margin-top: 5rem;
+  z-index: -1;
   background: -webkit-linear-gradient(#fffc08, #575506);
   -webkit-background-clip: text;
   background-clip: text;

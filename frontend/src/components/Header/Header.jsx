@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-no-useless-fragment */
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { AiOutlineContacts, AiOutlineHome } from "react-icons/ai";
 import { BsCalendarDate } from "react-icons/bs";
@@ -14,6 +15,11 @@ import "./Header.css";
 
 function Header() {
   // const [show, setShow] = useState(false);
+  const [activeMenu, setActiveMenu] = useState("home");
+
+  const handleMenuItemClick = (pageId) => {
+    setActiveMenu(pageId);
+  };
 
   return (
     <header id="home" className="classHeaderContainer">
@@ -25,23 +31,43 @@ function Header() {
       >
         <ul className="classNav">
           <li>
-            <a href="#home">
-              <AiOutlineHome color="white" size="2rem" />
+            <a href="#home" onClick={() => handleMenuItemClick("home")}>
+              <AiOutlineHome
+                size="2rem"
+                className={
+                  activeMenu === "home" ? "classActive" : "classInactive"
+                }
+              />
             </a>
           </li>
           <li>
-            <a href="#activity">
-              <MdOutlineContactSupport color="white" size="2rem" />
+            <a href="#activity" onClick={() => handleMenuItemClick("activity")}>
+              <MdOutlineContactSupport
+                size="2rem"
+                className={
+                  activeMenu === "activity" ? "classActive" : "classInactive"
+                }
+              />
             </a>
           </li>
           <li>
-            <a href="#calendar">
-              <BsCalendarDate color="white" size="2rem" />
+            <a href="#calendar" onClick={() => handleMenuItemClick("calendar")}>
+              <BsCalendarDate
+                size="2rem"
+                className={
+                  activeMenu === "calendar" ? "classActive" : "classInactive"
+                }
+              />
             </a>
           </li>
           <li>
-            <a href="#contact">
-              <AiOutlineContacts color="white" size="2rem" />
+            <a href="#contact" onClick={() => handleMenuItemClick("contact")}>
+              <AiOutlineContacts
+                style={{ height: "2rem", width: "2.4rem", scale: "1.3" }}
+                className={
+                  activeMenu === "contact" ? "classActive" : "classInactive"
+                }
+              />
             </a>
           </li>
         </ul>
