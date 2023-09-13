@@ -46,16 +46,20 @@ function Contact() {
         </p>
         <div className="contact-methods">
           <div className="contact-mail">
-            <GoMail />
+            <GoMail style={{ marginRight: "0.5rem" }} />
             <p>obsstjean</p>
             <p>
-              <SiMaildotru />
+              <SiMaildotru size="0.7rem" />
             </p>
             <p>gmail.com</p>
           </div>
           <div className="classContactFacebook">
             <a href="https://www.google.fr" target="_blank" rel="noreferrer">
-              <AiOutlineFacebook className="classContactFacebookIcon" />
+              <AiOutlineFacebook
+                color="yellow"
+                size="1.2rem"
+                style={{ marginRight: "0.5rem" }}
+              />
             </a>
             <p>Obssjean</p>
           </div>

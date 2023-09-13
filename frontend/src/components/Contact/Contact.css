@@ -35,7 +35,8 @@
 .contact-mail {
   color: yellow;
   display: flex;
-  gap: 5px;
+  align-items: center;
+  gap: 3px;
 }
 
 .classContactParagraph {
@@ -47,9 +48,4 @@
   display: flex;
   align-items: center;
   gap: 1vw;
-}
-
-.classContactFacebookIcon {
-  color: yellow;
-  font-size: 1.2rem;
 }
