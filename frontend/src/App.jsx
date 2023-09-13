@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import Header from "./components/Header/Header";
 import Events from "./components/Events/Events";
@@ -12,21 +12,26 @@ import Administration from "./pages/Administration";
 import "./App.css";
 
 function App() {
+  const location = useLocation();
+
   useEffect(() => {
     const preventSwipeScroll = (event) => {
       event.preventDefault();
     };
-
-    window.addEventListener("wheel", preventSwipeScroll, { passive: false });
-    window.addEventListener("touchmove", preventSwipeScroll, {
-      passive: false,
-    });
+    if (location.pathname !== "/administration") {
+      window.addEventListener("wheel", preventSwipeScroll, { passive: false });
+      window.addEventListener("touchmove", preventSwipeScroll, {
+        passive: false,
+      });
+    }
 
     return () => {
-      window.removeEventListener("wheel", preventSwipeScroll);
-      window.removeEventListener("touchmove", preventSwipeScroll);
+      if (location.pathname !== "/administration") {
+        window.removeEventListener("wheel", preventSwipeScroll);
+        window.removeEventListener("touchmove", preventSwipeScroll);
+      }
     };
-  }, []);
+  }, [location.pathname]);
 
   return (
     <div className="app">
