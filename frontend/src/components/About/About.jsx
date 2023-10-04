@@ -8,9 +8,12 @@ import "./About.css";
 
 function About() {
   return (
-    <section id="activity" className="section-about">
+    <section
+      id="activity"
+      className="w-[90%] h-screen flex flex-col items-center"
+    >
       <h1 className="classTitles">Nos activités</h1>
-      <div className="about-card-display">
+      <div className="flex flex-col items-center justify-center w-full h-full">
         <Carousel
           infiniteLoop
           autoPlay
@@ -18,7 +21,7 @@ function About() {
           showStatus={false}
           showIndicators
           showThumbs={false}
-          className="about-card-carousel"
+          className="relative flex w-full h-full"
         >
           {datasAbout.map((data) => (
             <CardAbout data={data} key={data.id} />

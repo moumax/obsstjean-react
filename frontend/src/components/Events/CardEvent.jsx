@@ -12,8 +12,6 @@ import CurrentUserContext from "../../contexts/userContext";
 import editEvent from "../../assets/administration/editEvent.svg";
 import eraseEvent from "../../assets/administration/deleteEvent.svg";
 
-import "./CardEvent.css";
-
 function CardEvent({ data }) {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [modalDeleteIsOpen, setModalDeleteIsOpen] = useState(false);
@@ -120,32 +118,38 @@ function CardEvent({ data }) {
   const nowIso = now.toISOString();
 
   return (
-    <div className="card-event-container">
+    <div className="flex flex-col items-center">
       <div
-        className={`card-event-border ${
-          data.date < nowIso ? "card-event-past-date" : "card-event-future-date"
+        className={`w-[90vw] mb-2 rounded-xl ${
+          data.date < nowIso
+            ? "border-dotted border-red-500 border-2"
+            : "border-dotted border-green-500 border-2"
         }`}
       >
-        <div className="card-event-subcontainer">
-          <div className="card-event-date-title">
-            <Moment locale="fr" format="LL" className="card-event-date">
+        <div className="ml-3 mr-3">
+          <div className="flex justify-around mt-2 items-center mb-4">
+            <Moment
+              locale="fr"
+              format="LL"
+              className="text-white opacity-50 text-sm"
+            >
               {data.date}
             </Moment>
-            <h3 className="card-event-titles">{data.title}</h3>
+            <h3 className="text-yellow-400 text-base">{data.title}</h3>
           </div>
-          <p className="card-event-description">{data.description}</p>
-          <div className="card-event-site-container">
-            <p className="cardEventSiteText">A quel endroit ?</p>
-            <p className="cardEventSiteText">{data.site}</p>
+          <p className="text-white opacity-50">{data.description}</p>
+          <div className="flex justify-between pt-6 pb-2 text-[0.75rem]">
+            <p className="text-white opacity-70">A quel endroit ?</p>
+            <p className="text-white opacity-70">{data.site}</p>
           </div>
         </div>
 
         {user && currentPage !== "/" && (
-          <div className="card-event-block-buttons">
+          <div className="flex justify-end">
             <button
               type="submit"
               onClick={() => openModalModify()}
-              className="card-event-button-event-edit"
+              className="w-[3rem] bg-transparent border-none"
             >
               <img
                 className="w-[8vw]"
@@ -157,7 +161,7 @@ function CardEvent({ data }) {
             <button
               type="submit"
               onClick={() => openModalDelete()}
-              className="card-event-button-event-delete"
+              className="w-[3rem] bg-transparent border-none"
             >
               <img src={eraseEvent} alt="Supprimer un évènement" />
               <span />

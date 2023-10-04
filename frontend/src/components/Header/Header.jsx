@@ -47,16 +47,16 @@ function Header() {
           alt="observatoire de Saint Jean Le Blanc"
         />
         <div>
-          <h1 className="classHeaderTitle">
+          <h1 className="text-xl bg-gradient-to-r from-[#fffc08] to-[#575506] bg-clip-text text-transparent font-extralight">
             Observatoire <br /> de <br /> Saint Jean Le Blanc
           </h1>
         </div>
       </div>
       <div>
-        <h2 className="classHeaderSubtitle">
+        <h2 className="text-white opacity-50 text-[0.875rem] text-center">
           Association loi 1901 pour la promotion de l&apos;astronomie amateur
         </h2>
-        <div className="classHeaderImgWeatherContainer">
+        <div className="block relative text-center">
           <img
             className="w-[90vw] h-[40vh] mt-5 mb-5 rounded-xl z-50"
             src={coupole}
