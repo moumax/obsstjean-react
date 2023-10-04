@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-no-useless-fragment */
-import { motion } from "framer-motion";
 import { AiOutlineContacts, AiOutlineHome } from "react-icons/ai";
 import { BsCalendarDate } from "react-icons/bs";
 import { MdOutlineContactSupport } from "react-icons/md";
@@ -11,19 +9,15 @@ import Weather from "../Weather/Weather";
 import Observatoire from "../Observatoire/Observatoire";
 
 import "./Header.css";
+import "../../index.css";
 
 function Header() {
   // const [show, setShow] = useState(false);
 
   return (
-    <header id="home" className="classHeaderContainer">
-      <motion.nav
-        style={{ filter: "blur(100px)" }}
-        animate={{ filter: "blur(0px)" }}
-        transition={{ duration: 4 }}
-        className="classNavContainer"
-      >
-        <ul className="classNav">
+    <header id="home" className="w-[95%] h-screen flex flex-col items-center">
+      <nav className="w-full flex justify-end mt-4 fixed mr-4">
+        <ul className="flex text-white gap-3 z-50">
           <li>
             <a href="#home">
               <AiOutlineHome color="white" size="2rem" />
@@ -45,47 +39,28 @@ function Header() {
             </a>
           </li>
         </ul>
-      </motion.nav>
-      <div className="classHeaderLogoTitle">
-        <motion.div
-          animate={{
-            x: [90, 30, 140, 0],
-            y: [250, 450, 200, 0],
-            scale: [2, 1],
-            opacity: 1,
-          }}
-          transition={{ ease: "easeInOut", delay: 1, duration: 2 }}
-          className="classHeaderImg"
-        >
-          <img
-            className="classHeaderImg"
-            src={logo}
-            alt="observatoire de Saint Jean Le Blanc"
-          />
-        </motion.div>
-        <motion.div
-          style={{ filter: "blur(100px)" }}
-          animate={{ filter: "blur(0px)" }}
-          transition={{ duration: 4 }}
-        >
+      </nav>
+      <div className="flex items-center gap-[2vw] mb-[2vh]">
+        <img
+          className="h-[25vh] mt-[1.4vh] z-50"
+          src={logo}
+          alt="observatoire de Saint Jean Le Blanc"
+        />
+        <div>
           <h1 className="classHeaderTitle">
             Observatoire <br /> de <br /> Saint Jean Le Blanc
           </h1>
-        </motion.div>
+        </div>
       </div>
-      <motion.div
-        style={{ filter: "blur(100px)" }}
-        animate={{ filter: "blur(0px)" }}
-        transition={{ duration: 4 }}
-      >
+      <div>
         <h2 className="classHeaderSubtitle">
-          Association loi 1901 pour la promotion de l'astronomie amateur
+          Association loi 1901 pour la promotion de l&apos;astronomie amateur
         </h2>
         <div className="classHeaderImgWeatherContainer">
           <img
-            className="classHeaderImgCoupole"
+            className="w-[90vw] h-[40vh] mt-5 mb-5 rounded-xl z-50"
             src={coupole}
-            alt="coupole observatoire"
+            alt="coupole de l'observatoire"
           />
           <Weather />
         </div>
@@ -102,7 +77,7 @@ function Header() {
         <span className="spaned fourth" />
       </button>
       <ModalSkyOfMonth onClose={() => setShow(false)} show={show} /> */}
-      </motion.div>
+      </div>
     </header>
   );
 }

@@ -26,8 +26,11 @@
   "author": "Wild Code School",
   "license": "MIT",
   "devDependencies": {
+    "autoprefixer": "^10.4.16",
     "concurrently": "^7.6.0",
     "cross-env": "^7.0.3",
-    "husky": "^8.0.3"
+    "husky": "^8.0.3",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.3"
   }
 }
