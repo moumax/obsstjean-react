@@ -9,8 +9,6 @@ import addUser from "../../assets/administration/addUser.svg";
 import axiosAPI from "../../services/axiosAPI";
 import fetcher from "../../api/fetcher";
 
-import "./UsersAdministration.css";
-
 Modal.setAppElement("#root");
 
 export default function UsersAdministration() {
@@ -86,16 +84,16 @@ export default function UsersAdministration() {
   };
 
   return (
-    <section className="user-administration-container">
-      <h2 className="user-administration-title">Liste des utilisateurs</h2>
-      <div className="user-administration-button-add-container">
+    <section className="w-full mt-[1rem] flex flex-col items-center min-h-screen">
+      <h2 className="text-white text-[2rem]">Liste des utilisateurs</h2>
+      <div className="flex p-[1rem] flex-start">
         <button
-          className="user-administration-button-add"
+          className="w-[4rem] bg-transparent border-none"
           type="button"
           onClick={openModalAdd}
         >
           <img
-            className="user-administration-button-add-svg"
+            className="w-[3rem]"
             src={addUser}
             alt="add a user"
           />
@@ -192,13 +190,13 @@ export default function UsersAdministration() {
           </div>
 
           <div className="flex flex-col mt-20 gap-5">
-            <button type="submit" className="user-administration-button-save">
+            <button type="submit" className="bg-blue-400">
               Sauvegarder
             </button>
             <button
               type="submit"
               onClick={closeModal}
-              className="user-administration-button-close"
+              className="bg-blue-400"
             >
               Fermer
             </button>

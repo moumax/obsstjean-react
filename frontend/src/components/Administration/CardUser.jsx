@@ -9,8 +9,6 @@ import axiosAPI from "../../services/axiosAPI";
 import editUser from "../../assets/administration/editUser.svg";
 import deleteUser from "../../assets/administration/deleteUser.svg";
 
-import "./CardUser.css";
-
 function CardUser({ data }) {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [modalDeleteIsOpen, setModalDeleteIsOpen] = useState(false);
@@ -82,26 +80,26 @@ function CardUser({ data }) {
   };
 
   return (
-    <div className="card-user-container">
-      <div className="card-user">
-        <div className=" card-user-text">
-          <div className="card-user-division">
+    <div className="flex flex-col items-center">
+      <div className="w-[90vw] mb-[0.25rem] rounded-xl p-[0.25rem] text-white bg-[#00ffff]/10">
+        <div className="w-full flex flex-col p-[0.5rem] text-[1.2rem]">
+          <div className="flex items-center mb-[1rem]">
             <p>Email :</p>
-            <h3 className="card-user-datas">{data.mail}</h3>
+            <h3 className="text-white opacity-70 pl-[0.75rem]">{data.mail}</h3>
           </div>
-          <div className="card-user-division">
+          <div className="flex items-center mb-[1rem]">
             <p>Role :</p>
-            <h3 className="card-user-datas">{data.role}</h3>
+            <h3 className="text-white opacity-70 pl-[0.75rem]">{data.role}</h3>
           </div>
-          <div className="card-user-division">
+          <div className="flex items-center mb-[1rem]">
             <p>Prénom :</p>
-            <h3 className="card-user-datas">{data.name}</h3>
+            <h3 className="text-white opacity-70 pl-[0.75rem]">{data.name}</h3>
           </div>
           <div className="self-center">
             {data && currentPage !== "/" && (
-              <div className="card-user-block-buttons">
+              <div className="flex justify-end">
                 <button
-                  className="card-user-button-user-edit"
+                  className="w-[3rem] bg-transparent border-none"
                   type="submit"
                   onClick={() => openModalModify()}
                 >
@@ -111,7 +109,7 @@ function CardUser({ data }) {
                 <button
                   type="submit"
                   onClick={() => openModalDelete()}
-                  className="card-user-button-user-delete"
+                  className="w-[3rem] bg-transparent border-none"
                 >
                   <img src={deleteUser} alt="Supprimer un utilisateur" />
                   <span />
@@ -170,7 +168,7 @@ function CardUser({ data }) {
             <button
               type="submit"
               onClick={modifyUser}
-              className="card-user-button-modify-user"
+              className="bg-blue-400"
             >
               Modifier
             </button>
@@ -178,7 +176,7 @@ function CardUser({ data }) {
             <button
               type="submit"
               onClick={closeModal}
-              className="card-user-button-cancel"
+              className="bg-blue-400"
             >
               Annuler
             </button>
@@ -208,7 +206,7 @@ function CardUser({ data }) {
             <button
               type="submit"
               onClick={delUser}
-              className="card-user-button-delete-user"
+              className="bg-blue-400"
             >
               Supprimer
             </button>
@@ -216,7 +214,7 @@ function CardUser({ data }) {
             <button
               type="submit"
               onClick={closeModalDelete}
-              className="card-user-button-cancel"
+              className="bg-blue-400"
             >
               Annuler
             </button>

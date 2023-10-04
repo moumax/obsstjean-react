@@ -10,8 +10,6 @@ import sortedByDate from "../../utils/date";
 import addEvent from "../../assets/administration/addEvent.svg";
 import fetcher from "../../api/fetcher";
 
-import "./EventsAdministration.css";
-
 Modal.setAppElement("#root");
 
 export default function EventsAdministration() {
@@ -105,16 +103,16 @@ export default function EventsAdministration() {
   };
 
   return (
-    <section className="event-administration-container">
-      <h2 className="event-administration-title">Calendrier des évènements</h2>
-      <div className="event-administration-button-add-container">
+    <section className="w-full mt-[1rem] flex flex-col items-center min-h-screen">
+      <h2 className="text-white text-[1.7rem]">Calendrier des évènements</h2>
+      <div className="flex p-[1rem] flex-start">
         <button
-          className="event-administration-button-add"
+          className="w-[4rem] bg-transparent border-none"
           type="button"
           onClick={openModalAdd}
         >
           <img
-            className="event-administration-button-add-svg"
+            className="w-[3rem]"
             src={addEvent}
             alt="add an event"
           />
