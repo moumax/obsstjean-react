@@ -1,6 +1,6 @@
 import React from "react";
 import Leaflet from "leaflet";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import { AiOutlineFacebook } from "react-icons/ai";
 import { SiMaildotru } from "react-icons/si";
 import { GoMail } from "react-icons/go";
@@ -9,7 +9,6 @@ import Footer from "../Footer/Footer";
 import iconUrl from "../../assets/contact/marker.webp";
 
 import "./Leaflet.css";
-import "./Contact.css";
 
 function Contact() {
   const position = [47.891346, 1.917617];
@@ -22,7 +21,10 @@ function Contact() {
   });
 
   return (
-    <section id="contact" className="w-[90%] flex flex-col items-center h-screen">
+    <section
+      id="contact"
+      className="w-[90%] flex flex-col items-center h-screen"
+    >
       <h1 className="classTitles">Nous contacter</h1>
 
       <MapContainer
