@@ -22,11 +22,11 @@ function Contact() {
   });
 
   return (
-    <section id="contact" className="section-contact">
+    <section id="contact" className="w-[90%] flex flex-col items-center h-screen">
       <h1 className="classTitles">Nous contacter</h1>
 
       <MapContainer
-        className="classContactMap"
+        className="h-[14rem] w-[90%] overflow-hidden rouned-xl mb-[3vh]"
         center={position}
         zoom={17}
         scrollWheelZoom={false}
@@ -40,12 +40,12 @@ function Contact() {
         </Marker>
       </MapContainer>
 
-      <div className="contact-paragraph">
-        <p className="classContactParagraph">
+      <div className="flex flex-col items-center text-white mb-[4rem]">
+        <p className="mb-[2vh]">
           L'observatoire est ouvert tous les vendredis à partir de 21h00
         </p>
-        <div className="contact-methods">
-          <div className="contact-mail">
+        <div className="flex flex-col items-center gap-[10px] justify-center w-full">
+          <div className="text-yellow-400 flex gap-[5px]">
             <GoMail />
             <p>obsstjean</p>
             <p>
@@ -53,9 +53,9 @@ function Contact() {
             </p>
             <p>gmail.com</p>
           </div>
-          <div className="classContactFacebook">
+          <div className="text-yellow-400 flex items-center gap-[1vw]">
             <a href="https://www.google.fr" target="_blank" rel="noreferrer">
-              <AiOutlineFacebook className="classContactFacebookIcon" />
+              <AiOutlineFacebook className="text-yellow-400 text-[1.2rem]" />
             </a>
             <p>Obssjean</p>
           </div>
