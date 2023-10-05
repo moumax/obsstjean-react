@@ -1,39 +1,26 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import {
-  BsCloudFog,
-  BsCloudRain,
-  BsCloudSnow,
-  BsCloudSun,
-  BsSun,
-  BsSunrise,
-  BsSunset,
-  BsThermometerSnow,
-  BsWind,
-} from "react-icons/bs";
-import {
-  WiDaySnow,
-  WiDaySnowThunderstorm,
-  WiDayThunderstorm,
-  WiHumidity,
-  WiMoonAltFirstQuarter,
-  WiMoonAltThirdQuarter,
-  WiMoonAltWaningCrescent5,
-  WiMoonAltWaningGibbous2,
-  WiMoonAltWaxingGibbous2,
-  WiMoonFull,
-  WiMoonNew,
-  WiMoonrise,
-  WiMoonset,
-  WiWindDeg,
-  WiThunderstorm,
-  WiMoonWaxingCrescent1,
-} from "react-icons/wi";
-import { FaCloudSunRain, FaTemperatureLow } from "react-icons/fa";
-import { AiOutlineCloud } from "react-icons/ai";
-import { RiCloudWindyLine, RiMistFill } from "react-icons/ri";
-import { BiCloudRain } from "react-icons/bi";
-// import { IoThunderstormSharp } from "react-icons/io";
+  Cloud,
+  CloudDrizzle,
+  CloudFog,
+  CloudRainWind,
+  CloudSnow,
+  CloudSun,
+  CloudyIcon,
+  Compass,
+  Droplets,
+  Moon,
+  Snowflake,
+  SnowflakeIcon,
+  Sun,
+  SunMedium,
+  Sunrise,
+  Sunset,
+  Thermometer,
+  Wind,
+  Zap,
+} from "lucide-react";
 
 import "./Weather.css";
 
@@ -42,7 +29,6 @@ function Weather() {
   const [sunset, setSunset] = useState();
   const [moonrise, setMoonrise] = useState();
   const [moonset, setMoonset] = useState();
-  const [moonphase, setMoonPhase] = useState();
   const [illumination, setIllumination] = useState();
 
   const [temperature, setTemperature] = useState();
@@ -79,7 +65,6 @@ function Weather() {
       setSunset(convertTimeTo24(response.data.astronomy.astro.sunset));
       setMoonrise(convertTimeTo24(response.data.astronomy.astro.moonrise));
       setMoonset(convertTimeTo24(response.data.astronomy.astro.moonset));
-      setMoonPhase(response.data.astronomy.astro.moon_phase);
       setIllumination(response.data.astronomy.astro.moon_illumination);
     });
   }, []);
@@ -99,14 +84,22 @@ function Weather() {
     switch (condition) {
       case "Sunny":
       case "Clear":
-        return <BsSun className="classWeatherCondition" />;
+        return <Sun size={28} strokeWidth={1} color="yellow" />;
+
       case "Partly cloudy":
-        return <BsCloudSun className="classWeatherCondition" />;
+        return <CloudSun size={28} strokeWidth={1} color="grey" />;
+
       case "Cloudy":
+        return <Cloud size={28} strokeWidth={1} color="grey" />;
+
       case "Overcast":
-        return <AiOutlineCloud className="classWeatherCondition" />;
+        return <CloudyIcon size={28} strokeWidth={1} color="black" />;
+
       case "Mist":
-        return <RiMistFill className="classWeatherCondition" />;
+      case "Fog":
+        return <CloudFog size={28} strokeWidth={1} color="white" />;
+
+      // rain
       case "Patchy rain possible":
       case "Patchy light rain":
       case "Light rain":
@@ -123,7 +116,9 @@ function Weather() {
       case "Torrential rain shower":
       case "Light sleet showers":
       case "Moderate or heavy sleet showers":
-        return <FaCloudSunRain className="classWeatherCondition" />;
+        return <CloudRainWind size={28} color="grey" strokeWidth={1} />;
+
+      // snow
       case "Patchy snow possible":
       case "Patchy light snow":
       case "Light snow":
@@ -136,66 +131,47 @@ function Weather() {
       case "Moderate or heavy snow showers":
       case "Light showers of ice pellets":
       case "Moderate or heavy showers of ice pellets":
-        return <WiDaySnow className="classWeatherCondition" />;
       case "Patchy sleet possible":
-        return <WiDaySnow className="classWeatherCondition" />;
-      case "Patchy freezing drizzle possible":
-        return <BsThermometerSnow className="classWeatherCondition" />;
-      case "Thundery outbreaks possible":
-        return <WiDayThunderstorm className="classWeatherCondition" />;
       case "Blowing snow":
-        return <BsCloudSnow className="classWeatherCondition" />;
-      case "Blizzard":
-        return <RiCloudWindyLine className="classWeatherCondition" />;
-      case "Fog":
+        return <Snowflake size={28} color="white" strokeWidth={1} />;
+
+      // freeze
+      case "Patchy freezing drizzle possible":
       case "Freezing fog":
-        return <BsCloudFog className="classWeatherCondition" />;
-      case "Patchy light drizzle":
-      case "Light drizzle":
-        return <BsCloudRain className="classWeatherCondition" />;
       case "Freezing drizzle":
       case "Heavy freezing drizzle":
-        return <BiCloudRain className="classWeatherCondition" />;
-      case "Patchy light rain with thunder":
-      case "Moderate or heavy rain with thunder":
-        return <WiThunderstorm className="classWeatherCondition" />;
-      case "Patchy light snow with thunder":
-      case "Moderate or heavy snow with thunder":
-        return <WiDaySnowThunderstorm className="classWeatherCondition" />;
-      default:
-        return <BsSun className="classWeatherCondition" />;
-    }
-  };
+        return <SnowflakeIcon size={28} color="lightblue" strokeWidth={1} />;
 
-  const lunarIcon = () => {
-    switch (moonphase) {
-      case "New Moon":
-        return <WiMoonNew className="classWeatherMoonIcon" />;
-      case "First Quarter":
-        return <WiMoonAltFirstQuarter className="classWeatherMoonIcon" />;
-      case "Last Quarter":
-        return <WiMoonAltThirdQuarter className="classWeatherMoonIcon" />;
-      case "Waxing Crescent":
-        return <WiMoonWaxingCrescent1 className="classWeatherMoonIcon" />;
-      case "Waning Crescent":
-        return <WiMoonAltWaningCrescent5 className="classWeatherMoonIcon" />;
-      case "Waxing Gibbous":
-        return <WiMoonAltWaxingGibbous2 className="classWeatherMoonIcon" />;
-      case "Waning Gibbous":
-        return <WiMoonAltWaningGibbous2 className="classWeatherMoonIcon" />;
+      // thunder
+      case "Thundery outbreaks possible":
+      case "patchy light rain with thunder":
+      case "moderate or heavy rain with thunder":
+      case "patchy light snow with thunder":
+      case "moderate or heavy snow with thunder":
+        return <Zap size={28} color="yellow" strokeWidth={1} />;
+
+      // blizzard
+      case "Blizzard":
+        return <CloudSnow size={28} color="white" strokeWidth={1} />;
+
+      // drizzle
+      case "Patchy light drizzle":
+      case "Light drizzle":
+        return <CloudDrizzle size={28} color="white" strokeWidth={1} />;
+
       default:
-        return <WiMoonFull className="classWeatherMoonIcon" />;
+        return <SunMedium size={28} color="yellow" strokeWidth={1} />;
     }
   };
 
   function temperatureIconColor() {
     if (temperature > "28") {
-      return "classWeatherTemperatureHot";
+      return <Thermometer size={28} strokeWidth={1} color="red" />;
     }
     if (temperature < "28" && temperature >= "20") {
-      return "classWeatherTemperatureMedium";
+      return <Thermometer size={28} strokeWidth={1} color="yellow" />;
     }
-    return "classWeatherTemperatureLow";
+    return <Thermometer size={28} strokeWidth={1} color="blue" />;
   }
 
   return (
@@ -204,42 +180,42 @@ function Weather() {
         <div className="flex flex-col items-center text-white">
           {conditionPicture()}
         </div>
-        <div className="flex flex-col items-center text-white">
-          <FaTemperatureLow className={temperatureIconColor()} />
+        <div className="flex-col items-center text-white">
+          {temperatureIconColor()}
           {`${temperature} °C`}
         </div>
         <div className="flex flex-col items-center text-white">
-          <WiHumidity className="classWeatherHumidityIcon" />
+          <Droplets size={28} color="lightblue" strokeWidth={1} />
           {`${humidity} %`}
         </div>
         <div className="flex flex-col items-center text-white">
-          <BsWind className="classWeatherWindIcon" />
+          <Wind size={28} color="white" strokeWidth={1} />
           {`${wind} km/h`}
         </div>
         <div className="flex flex-col items-center text-white">
-          <WiWindDeg className="classWeatherWindDirectionIcon" />
+          <Compass size={28} color="white" strokeWidth={1} />
           {windDirection}
         </div>
         <div className="flex flex-col items-center text-white">
-          <div className="classWeatherLunarIcon">{lunarIcon()}</div>
+          <Moon size={28} color="white" strokeWidth={1} />
           <div>{`${illumination} %`}</div>
         </div>
       </div>
-      <div className="flex gap-4">
+      <div className="flex gap-4 mt-3">
         <div className="flex items-center text-white gap-2">
-          <BsSunrise className="classWeatherSunriseIcon" />
+          <Sunrise size={28} color="yellow" strokeWidth={1} />
           {sunrise}
         </div>
         <div className="flex items-center text-white gap-2">
-          <BsSunset className="classWeatherSunsetIcon" />
+          <Sunset size={28} color="orange" strokeWidth={1} />
           {sunset}
         </div>
         <div className="flex items-center text-white gap-2">
-          <WiMoonrise className="classWeatherMoonriseIcon" />
+          <Sunrise size={28} color="grey" strokeWidth={1} />
           {moonrise}
         </div>
         <div className="flex items-center text-white gap-2">
-          <WiMoonset className="classWeatherMoonsetIcon" />
+          <Sunset size={28} color="grey" strokeWidth={1} />
           {moonset}
         </div>
       </div>

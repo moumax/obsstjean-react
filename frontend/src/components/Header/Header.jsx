@@ -2,6 +2,7 @@ import { CalendarDays, HeartHandshake, HelpCircle, Home } from "lucide-react";
 
 import logo from "../../assets/logo/logo.png";
 import coupole from "../../assets/logo/coupole.jpg";
+// eslint-disable-next-line import/no-named-as-default
 import Weather from "../Weather/Weather";
 // import ModalSkyOfMonth from "./ModalSkyOfMonth";
 import Observatoire from "../Observatoire/Observatoire";
