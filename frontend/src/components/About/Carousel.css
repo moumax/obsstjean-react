@@ -1,14 +1,17 @@
+.carousel .control-dots {
+  margin: 90px 0;
+}
+
 .carousel .control-dots .dot {
   background: yellow;
 }
-
 .carousel .control-prev.control-arrow:before {
   content: "";
   border: solid yellow;
   border-width: 0 4px 4px 0;
   display: inline-block;
   padding: 10px;
-  margin-bottom: -200px;
+  margin-bottom: -130px;
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
 }
@@ -19,7 +22,7 @@
   border-width: 0 4px 4px 0;
   display: inline-block;
   padding: 10px;
-  margin-bottom: -200px;
+  margin-bottom: -130px;
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }

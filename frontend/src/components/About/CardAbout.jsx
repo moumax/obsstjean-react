@@ -4,11 +4,11 @@ import React from "react";
 function CardAbout({ data }) {
   return (
     <div className="w-full flex flex-col items-center">
-      <h3 className="text-yellow-500 opacity-70 m-[2vw] mb-[7vh]">
+      <h3 className="text-yellow-300  m-[2vw] mb-[7vh] text-2xl">
         {data.title}
       </h3>
       <img
-        className="w-full h-auto rounded-2xl"
+        className="w-full h-60 rounded-2xl"
         src={data.image}
         alt={data.alt}
       />

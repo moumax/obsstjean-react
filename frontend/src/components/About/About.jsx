@@ -4,30 +4,24 @@ import CardAbout from "./CardAbout";
 import datasAbout from "../../datas/datasAbout";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import "./About.css";
+import "./Carousel.css";
 
 function About() {
   return (
-    <section
-      id="activity"
-      className="w-[90%] h-screen flex flex-col items-center"
-    >
-      <h1 className="classTitles">Nos activités</h1>
-      <div className="flex flex-col items-center justify-center w-full h-full">
-        <Carousel
-          infiniteLoop
-          autoPlay
-          interval={4000}
-          showStatus={false}
-          showIndicators
-          showThumbs={false}
-          className="relative flex w-full h-full"
-        >
-          {datasAbout.map((data) => (
-            <CardAbout data={data} key={data.id} />
-          ))}
-        </Carousel>
-      </div>
+    <section id="activity" className="w-[90%] h-screen flex items-center">
+      <Carousel
+        infiniteLoop
+        autoPlay
+        interval={4000}
+        showStatus={false}
+        showIndicators
+        showThumbs={false}
+        className="w-full h-fit"
+      >
+        {datasAbout.map((data) => (
+          <CardAbout data={data} key={data.id} />
+        ))}
+      </Carousel>
     </section>
   );
 }
