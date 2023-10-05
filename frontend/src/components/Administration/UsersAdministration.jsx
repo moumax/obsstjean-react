@@ -92,11 +92,7 @@ export default function UsersAdministration() {
           type="button"
           onClick={openModalAdd}
         >
-          <img
-            className="w-[3rem]"
-            src={addUser}
-            alt="add a user"
-          />
+          <img className="w-[3rem]" src={addUser} alt="add a user" />
           <span />
         </button>
       </div>
@@ -193,11 +189,7 @@ export default function UsersAdministration() {
             <button type="submit" className="bg-blue-400">
               Sauvegarder
             </button>
-            <button
-              type="submit"
-              onClick={closeModal}
-              className="bg-blue-400"
-            >
+            <button type="submit" onClick={closeModal} className="bg-blue-400">
               Fermer
             </button>
           </div>

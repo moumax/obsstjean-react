@@ -199,44 +199,46 @@ function Weather() {
   }
 
   return (
-    <section className="classWeatherSection">
-      <div className="classWeatherFirstDivision">
-        <div className="classWeatherSecondDivision">{conditionPicture()}</div>
-        <div className="classWeatherSecondDivision">
+    <section className="flex flex-col items-center max-h-[20vh] text-[0.7rem]">
+      <div className="flex gap-4">
+        <div className="flex flex-col items-center text-white">
+          {conditionPicture()}
+        </div>
+        <div className="flex flex-col items-center text-white">
           <FaTemperatureLow className={temperatureIconColor()} />
           {`${temperature} °C`}
         </div>
-        <div className="classWeatherSecondDivision">
+        <div className="flex flex-col items-center text-white">
           <WiHumidity className="classWeatherHumidityIcon" />
           {`${humidity} %`}
         </div>
-        <div className="classWeatherSecondDivision">
+        <div className="flex flex-col items-center text-white">
           <BsWind className="classWeatherWindIcon" />
           {`${wind} km/h`}
         </div>
-        <div className="classWeatherSecondDivision">
+        <div className="flex flex-col items-center text-white">
           <WiWindDeg className="classWeatherWindDirectionIcon" />
           {windDirection}
         </div>
-        <div className="classWeatherSecondDivision">
+        <div className="flex flex-col items-center text-white">
           <div className="classWeatherLunarIcon">{lunarIcon()}</div>
           <div>{`${illumination} %`}</div>
         </div>
       </div>
-      <div className="classWeatherFirstDivision">
-        <div className="classWeatherThirdDivision">
+      <div className="flex gap-4">
+        <div className="flex items-center text-white gap-2">
           <BsSunrise className="classWeatherSunriseIcon" />
           {sunrise}
         </div>
-        <div className="classWeatherThirdDivision">
+        <div className="flex items-center text-white gap-2">
           <BsSunset className="classWeatherSunsetIcon" />
           {sunset}
         </div>
-        <div className="classWeatherThirdDivision">
+        <div className="flex items-center text-white gap-2">
           <WiMoonrise className="classWeatherMoonriseIcon" />
           {moonrise}
         </div>
-        <div className="classWeatherThirdDivision">
+        <div className="flex items-center text-white gap-2">
           <WiMoonset className="classWeatherMoonsetIcon" />
           {moonset}
         </div>

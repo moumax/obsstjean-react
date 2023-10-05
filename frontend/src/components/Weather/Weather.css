@@ -32,32 +32,6 @@
   height: 2.5rem;
 }
 
-.classWeatherSection {
-  position: absolute;
-  top: 5vh;
-  bottom: 0;
-  left: 4vw;
-  right: 0;
-  width: 90%;
-  max-height: 20vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 0.7rem;
-}
-
-.classWeatherFirstDivision {
-  display: flex;
-  gap: 1rem;
-}
-
-.classWeatherSecondDivision {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: white;
-}
-
 .classWeatherHumidityIcon {
   color: aqua;
   width: var(--width-icon);
@@ -80,13 +54,6 @@
   color: white;
   width: var(--width-icon);
   height: 2.5rem;
-}
-
-.classWeatherThirdDivision {
-  display: flex;
-  align-items: center;
-  color: white;
-  gap: 0.5rem;
 }
 
 .classWeatherSunriseIcon {

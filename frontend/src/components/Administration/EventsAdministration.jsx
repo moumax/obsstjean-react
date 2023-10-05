@@ -111,11 +111,7 @@ export default function EventsAdministration() {
           type="button"
           onClick={openModalAdd}
         >
-          <img
-            className="w-[3rem]"
-            src={addEvent}
-            alt="add an event"
-          />
+          <img className="w-[3rem]" src={addEvent} alt="add an event" />
           <span />
         </button>
       </div>

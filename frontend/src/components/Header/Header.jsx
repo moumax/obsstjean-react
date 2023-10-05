@@ -57,12 +57,14 @@ function Header() {
           Association loi 1901 pour la promotion de l&apos;astronomie amateur
         </h2>
         <div className="block relative text-center">
+          <div className="absolute left-1/2 -translate-x-1/2 mt-2">
+            <Weather />
+          </div>
           <img
-            className="w-[90vw] h-[40vh] mt-5 mb-5 rounded-xl z-50"
+            className="w-[90vw] h-[40vh] mt-5 mb-5 rounded-xl z-50 mx-auto"
             src={coupole}
             alt="coupole de l'observatoire"
           />
-          <Weather />
         </div>
         <Observatoire />
         {/* <button

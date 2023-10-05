@@ -165,19 +165,11 @@ function CardUser({ data }) {
             />
           </div>
           <div className="flex flex-row absolute bottom-3 right-0 justify-between w-full px-4">
-            <button
-              type="submit"
-              onClick={modifyUser}
-              className="bg-blue-400"
-            >
+            <button type="submit" onClick={modifyUser} className="bg-blue-400">
               Modifier
             </button>
 
-            <button
-              type="submit"
-              onClick={closeModal}
-              className="bg-blue-400"
-            >
+            <button type="submit" onClick={closeModal} className="bg-blue-400">
               Annuler
             </button>
           </div>
@@ -203,11 +195,7 @@ function CardUser({ data }) {
             <p className="text-white self-end">{userForm.role}</p>
           </div>
           <div className="flex flex-row absolute bottom-3 right-0 justify-between w-full px-4">
-            <button
-              type="submit"
-              onClick={delUser}
-              className="bg-blue-400"
-            >
+            <button type="submit" onClick={delUser} className="bg-blue-400">
               Supprimer
             </button>
 
