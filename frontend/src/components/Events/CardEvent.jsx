@@ -79,7 +79,7 @@ function CardEvent({ data }) {
       }
       if (!userId) {
         toast.error('Le champ "UserId" est vide !');
-      }
+      } else toast.error(`Erreur: ${error}`);
     }
   };
 
