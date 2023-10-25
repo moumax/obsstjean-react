@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { CurrentUserContextProvider } from "./contexts/userContext";
 
 import App from "./App";
+import "./index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

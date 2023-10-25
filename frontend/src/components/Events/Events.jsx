@@ -5,8 +5,6 @@ import CardEvent from "./CardEvent";
 import sortedByDate from "../../utils/date";
 import fetcher from "../../api/fetcher";
 
-import "./Events.css";
-
 function Events() {
   const { data, error } = useSWR(
     `${import.meta.env.VITE_BACKEND_URL}/api/event/`,
@@ -26,7 +24,10 @@ function Events() {
       </div>
     );
   return (
-    <section id="calendar" className="events-container">
+    <section
+      id="calendar"
+      className="w-[90%] min-h-screen flex flex-col items center"
+    >
       <h2 className="classTitles">Calendrier des evènements</h2>
       {sortedByDate(data).map((event) => (
         <div key={event.id}>

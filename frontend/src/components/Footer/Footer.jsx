@@ -9,8 +9,6 @@ import { LuLogIn } from "react-icons/lu";
 import CurrentUserContext from "../../contexts/userContext";
 import axiosAPI from "../../services/axiosAPI";
 
-import "./Footer.css";
-
 function Footer() {
   const { user, setUser } = useContext(CurrentUserContext);
   const navigate = useNavigate();
@@ -27,25 +25,25 @@ function Footer() {
   };
 
   return (
-    <footer className="footer">
-      <div className="footer-informations">
+    <footer className="flex flex-col h-[20vh]">
+      <div className="flex flex-col text-white opacity-40 items-center text-[0.8rem]">
         <p>© 2019 - 2023 -- Marc LANTOL</p>
         <p>Observatoire Astronomique de Saint Jean Le Blanc (V3.0.0)</p>
-        <div className="footer-logos">
+        <div className="mt-[1rem] mb-[1rem] flex self-start gap-[10px]">
           <BiLogoReact size="2rem" color="#61DAFB" />
           <BiLogoJavascript size="2rem" color="yellow" />
           <SiMysql size="2rem" color="#3E6E93" />
           <img
-            className="footer-img"
+            className="w-[2rem]"
             src="src/assets/footer/stjeanleblanc.png"
             alt="Ville de Saint Jean Le Blanc"
           />
         </div>
       </div>
-      <div className="footer-buttons">
+      <div className="border-none bg-transparent">
         {!user && (
           <button
-            className="footer-buttons"
+            className="border-none bg-transparent"
             type="submit"
             onClick={() => navigate("/login")}
           >
@@ -55,14 +53,14 @@ function Footer() {
         {user && (
           <>
             <button
-              className="footer-buttons"
+              className="border-none bg-transparent"
               type="submit"
               onClick={() => handleDisconnect()}
             >
               <TbLogout size="2rem" color="white" />
             </button>
             <button
-              className="footer-buttons"
+              className="border-none bg-transparent"
               type="submit"
               onClick={() => navigate("/administration")}
             >

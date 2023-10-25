@@ -1,93 +1,72 @@
-/* eslint-disable react/jsx-no-useless-fragment */
-import { motion } from "framer-motion";
-import { AiOutlineContacts, AiOutlineHome } from "react-icons/ai";
-import { BsCalendarDate } from "react-icons/bs";
-import { MdOutlineContactSupport } from "react-icons/md";
+import { CalendarDays, HeartHandshake, HelpCircle, Home } from "lucide-react";
 
 import logo from "../../assets/logo/logo.png";
 import coupole from "../../assets/logo/coupole.jpg";
+// eslint-disable-next-line import/no-named-as-default
 import Weather from "../Weather/Weather";
 // import ModalSkyOfMonth from "./ModalSkyOfMonth";
 import Observatoire from "../Observatoire/Observatoire";
 
 import "./Header.css";
+import "../../index.css";
 
 function Header() {
   // const [show, setShow] = useState(false);
 
   return (
-    <header id="home" className="classHeaderContainer">
-      <motion.nav
-        style={{ filter: "blur(100px)" }}
-        animate={{ filter: "blur(0px)" }}
-        transition={{ duration: 4 }}
-        className="classNavContainer"
+    <header id="home" className="w-[95%] h-screen flex flex-col items-center">
+      <nav
+        className="-right-2 w-fit flex justify-end mt-4 fixed mr-8 bg-yellow-400 rounded-md p-1 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10
+"
       >
-        <ul className="classNav">
+        <ul className="flex text-white gap-3 z-50">
           <li>
             <a href="#home">
-              <AiOutlineHome color="white" size="2rem" />
+              <Home size={28} strokeWidth={1} color="orange" />
             </a>
           </li>
           <li>
             <a href="#activity">
-              <MdOutlineContactSupport color="white" size="2rem" />
+              <HelpCircle size={28} strokeWidth={1} color="orange" />
             </a>
           </li>
           <li>
             <a href="#calendar">
-              <BsCalendarDate color="white" size="2rem" />
+              <CalendarDays size={28} strokeWidth={1} color="orange" />
             </a>
           </li>
           <li>
             <a href="#contact">
-              <AiOutlineContacts color="white" size="2rem" />
+              <HeartHandshake size={28} strokeWidth={1} color="orange" />
             </a>
           </li>
         </ul>
-      </motion.nav>
-      <div className="classHeaderLogoTitle">
-        <motion.div
-          animate={{
-            x: [90, 30, 140, 0],
-            y: [250, 450, 200, 0],
-            scale: [2, 1],
-            opacity: 1,
-          }}
-          transition={{ ease: "easeInOut", delay: 1, duration: 2 }}
-          className="classHeaderImg"
-        >
-          <img
-            className="classHeaderImg"
-            src={logo}
-            alt="observatoire de Saint Jean Le Blanc"
-          />
-        </motion.div>
-        <motion.div
-          style={{ filter: "blur(100px)" }}
-          animate={{ filter: "blur(0px)" }}
-          transition={{ duration: 4 }}
-        >
-          <h1 className="classHeaderTitle">
+      </nav>
+      <div className="flex items-center gap-[2vw] mb-[2vh]">
+        <img
+          className="h-[25vh] mt-4 z-50"
+          src={logo}
+          alt="observatoire de Saint Jean Le Blanc"
+        />
+        <div>
+          <h1 className="text-xl bg-gradient-to-r from-[#fffc08] to-[#575506] bg-clip-text text-transparent font-extralight mt-12">
             Observatoire <br /> de <br /> Saint Jean Le Blanc
           </h1>
-        </motion.div>
+        </div>
       </div>
-      <motion.div
-        style={{ filter: "blur(100px)" }}
-        animate={{ filter: "blur(0px)" }}
-        transition={{ duration: 4 }}
-      >
-        <h2 className="classHeaderSubtitle">
-          Association loi 1901 pour la promotion de l'astronomie amateur
+      <div>
+        <h2 className="text-white opacity-50 text-[0.875rem] text-center">
+          Association loi 1901 pour la promotion de l&apos;astronomie amateur
         </h2>
-        <div className="classHeaderImgWeatherContainer">
+        <div className="block relative text-center">
+          <div className="absolute left-1/2 -translate-x-1/2 mt-2">
+            <Weather />
+          </div>
           <img
-            className="classHeaderImgCoupole"
+            className="w-[90vw] h-[40vh] mt-5 mb-5 rounded-xl z-50 mx-auto"
             src={coupole}
-            alt="coupole observatoire"
+            alt="coupole de l'observatoire"
           />
-          <Weather />
         </div>
         <Observatoire />
         {/* <button
@@ -102,7 +81,7 @@ function Header() {
         <span className="spaned fourth" />
       </button>
       <ModalSkyOfMonth onClose={() => setShow(false)} show={show} /> */}
-      </motion.div>
+      </div>
     </header>
   );
 }
