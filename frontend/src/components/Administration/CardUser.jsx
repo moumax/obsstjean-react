@@ -9,7 +9,7 @@ import axiosAPI from "../../services/axiosAPI";
 import editUser from "../../assets/administration/editUser.svg";
 import deleteUser from "../../assets/administration/deleteUser.svg";
 
-function CardUser({ data }) {
+function CardUser({ data, fetchUsers }) {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [modalDeleteIsOpen, setModalDeleteIsOpen] = useState(false);
   const { mutate } = useSWRConfig();
@@ -61,7 +61,7 @@ function CardUser({ data }) {
     await axiosAPI.delete(
       `${import.meta.env.VITE_BACKEND_URL}/api/user/${data.id}`
     );
-    mutate(`${import.meta.env.VITE_BACKEND_URL}/api/user`);
+    fetchUsers();
     toast.success(`L'utilisateur ${data.mail} a été supprimé`);
   };
 

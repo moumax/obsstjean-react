@@ -8,6 +8,7 @@ import About from "./components/About/About";
 
 import Login from "./pages/Login";
 import Administration from "./pages/Administration";
+import SignUp from "./pages/SignUp";
 
 import "./App.css";
 
@@ -49,6 +50,7 @@ function App() {
         />
         <Route path="login" element={<Login />} />
         <Route path="administration" element={<Administration />} />
+        <Route path="signup" element={<SignUp />} />
       </Routes>
     </div>
   );

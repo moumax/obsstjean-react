@@ -4,7 +4,8 @@ const CurrentUserContext = createContext();
 
 // eslint-disable-next-line react/prop-types
 export function CurrentUserContextProvider({ children }) {
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
+  const [user, setUser] = useState(undefined);
+  const [users, setUsers] = useState([]);
   const [idUser, setIdUser] = useState(
     JSON.parse(localStorage.getItem("idUser"))
   );
@@ -13,10 +14,12 @@ export function CurrentUserContextProvider({ children }) {
     () => ({
       user,
       setUser,
+      users,
+      setUsers,
       idUser,
       setIdUser,
     }),
-    [user]
+    [users]
   );
   return (
     <CurrentUserContext.Provider value={value}>

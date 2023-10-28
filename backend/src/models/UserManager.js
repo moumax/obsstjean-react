@@ -12,7 +12,7 @@ class UserManager extends AbstractManager {
     const joiObject = {
       mail: Joi.string().max(45).presence(this.presence),
       password: Joi.string().max(500).presence(this.presence),
-      role: Joi.string().max(15).presence(this.presence),
+      role: Joi.string().max(15),
       name: Joi.string().max(100).presence(this.presence),
     };
 
@@ -26,8 +26,8 @@ class UserManager extends AbstractManager {
 
   insert(user) {
     return this.database.query(
-      `insert into user (mail, password_hash, name, role) values (?, ?, ?, ?)`,
-      [user.mail, user.password_hash, user.name, user.role]
+      `insert into user (mail, password_hash, name) values (?, ?, ?)`,
+      [user.mail, user.password_hash, user.name]
     );
   }
 
