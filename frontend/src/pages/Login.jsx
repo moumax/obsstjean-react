@@ -25,31 +25,31 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    try {
-      loginSchema.parse({ mail, password });
-      const response = await axiosAPI.post(
-        `${import.meta.env.VITE_BACKEND_URL}/api/auth/login`,
-        {
+    loginSchema.parse({ mail, password });
+    if (mail && password) {
+      await axiosAPI
+        .post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/login`, {
           mail,
           password,
-        }
-      );
-      setUser(response.data);
-      navigate("/");
-      toast.success("Vous êtes connecté !");
-    } catch (err) {
-      setError(err.errors);
-      if (err.response && err.response.status === 401) {
-        const error401 = "Email ou mot de passe invalide";
-        setLoginError(error401);
-        toast.error(error401);
-      }
-      if (err.response && err.response.status === 500) {
-        const error500 = "Server en panne";
-        setLoginError(error500);
-        toast.error(error500);
-      }
+        })
+        .then((res) => {
+          setUser(res.data);
+          navigate("/");
+          toast.success("Vous êtes connecté !");
+        })
+        .catch((err) => {
+          setError(err.errors);
+          if (err.response && err.response.status === 401) {
+            const error401 = "Email ou mot de passe invalide";
+            setLoginError(error401);
+            toast.error(error401);
+          }
+          if (err.response && err.response.status === 500) {
+            const error500 = "Server en panne";
+            setLoginError(error500);
+            toast.error(error500);
+          }
+        });
     }
   };
 
@@ -64,7 +64,7 @@ export default function Login() {
               id="user"
               name="user"
               placeholder="Votre email"
-              onChange={(e) => setMail(e.target.value)}
+              onChange={(ev) => setMail(ev.target.value)}
             />
             <input
               className="section-login-input"
@@ -72,7 +72,7 @@ export default function Login() {
               id="pass"
               name="pass"
               placeholder="Votre mot de passe"
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(ev) => setPassword(ev.target.value)}
             />
 
             {error && (

@@ -14,8 +14,6 @@ Modal.setAppElement("#root");
 
 export default function EventsAdministration() {
   const [modalIsOpen, setIsOpen] = useState(false);
-
-  const role = JSON.parse(localStorage.getItem("role"));
   const idUser = JSON.parse(localStorage.getItem("idUser"));
 
   const initialState = {
@@ -205,12 +203,11 @@ export default function EventsAdministration() {
         </div>
       </Modal>
 
-      {(role === "administrateur" || role === "redacteur") &&
-        sortedByDate(data).map((event) => (
-          <div key={event.id}>
-            <CardEvent data={event} />
-          </div>
-        ))}
+      {sortedByDate(data).map((event) => (
+        <div key={event.id}>
+          <CardEvent data={event} />
+        </div>
+      ))}
     </section>
   );
 }

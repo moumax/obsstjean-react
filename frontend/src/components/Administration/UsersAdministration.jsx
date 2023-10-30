@@ -4,7 +4,7 @@ import axiosAPI from "../../services/axiosAPI";
 import CurrentUserContext from "../../contexts/userContext";
 
 export default function UsersAdministration() {
-  const { users, setUsers } = useContext(CurrentUserContext);
+  const { user, users, setUsers } = useContext(CurrentUserContext);
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchUsers = async () => {
@@ -36,9 +36,11 @@ export default function UsersAdministration() {
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        users.map((user) => (
-          <div key={user.id}>
-            <CardUser data={user} fetchUsers={fetchUsers} />
+        users.map((us) => (
+          <div key={us.id}>
+            {user && user.role === "administrateur" && (
+              <CardUser data={us} fetchUsers={fetchUsers} />
+            )}
           </div>
         ))
       )}

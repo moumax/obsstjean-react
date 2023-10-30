@@ -1,29 +1,45 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import UsersAdministration from "../components/Administration/UsersAdministration";
 import EventsAdministration from "../components/Administration/EventsAdministration";
+import PhotosAdministration from "../components/Administration/PhotosAdministration";
+import CurrentUserContext from "../contexts/userContext";
 
 import "react-tabs/style/react-tabs.css";
 
 import "./Administration.css";
 
 function Administration() {
+  const { user } = useContext(CurrentUserContext);
   const navigate = useNavigate();
   return (
     <section className="section-administration">
       <Tabs>
         <TabList>
-          <Tab>Utilisateurs</Tab>
-          <Tab>Events</Tab>
+          {user.role === "administrateur" && <Tab>Utilisateurs</Tab>}
+          {user.role !== "photographe" && user.role !== null && (
+            <Tab>Events</Tab>
+          )}
+          {user.role !== null && <Tab>Photos</Tab>}
         </TabList>
 
+        {user.role === "administrateur" && (
+          <TabPanel>
+            <UsersAdministration />
+          </TabPanel>
+        )}
+
         <TabPanel>
-          <UsersAdministration />
+          {user.role !== "photographe" && user.role !== null && (
+            <EventsAdministration />
+          )}
         </TabPanel>
-        <TabPanel>
-          <EventsAdministration />
-        </TabPanel>
+        {user.role !== null && (
+          <TabPanel>
+            <PhotosAdministration />
+          </TabPanel>
+        )}
       </Tabs>
       <button
         type="submit"

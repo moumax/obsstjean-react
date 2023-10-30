@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import Events from "./components/Events/Events";
 import Contact from "./components/Contact/Contact";
 import About from "./components/About/About";
+import Welcome from "./components/Welcome/Welcome";
 
 import Login from "./pages/Login";
 import Administration from "./pages/Administration";
@@ -36,6 +37,7 @@ function App() {
 
   return (
     <div className="app">
+      <Welcome />
       <Routes>
         <Route
           path="/"

@@ -23,6 +23,7 @@ const login = (req, res) => {
               id: userAnswer.id,
               mail: userAnswer.mail,
               role: userAnswer.role,
+              name: userAnswer.name,
             });
           } else {
             res.status(401).send("Invalid credentials");
