@@ -18,7 +18,11 @@ const login = (req, res) => {
             const userAnswer = user[0];
             delete userAnswer.password_hash;
             const token = encodeJwt(userAnswer);
-            res.cookie("token", token, { httpOnly: false, secure: false });
+            res.cookie("token", token, {
+              httpOnly: false, // Empeche l'accès au cookie depuis javascript
+              secure: false, // Pour autoriser le cookie sur https seulement
+              sameSite: "strict", // Restreint le cookie a être uniquement envoyé dans le contexte du site actuel
+            });
             res.status(200).json({
               id: userAnswer.id,
               mail: userAnswer.mail,

@@ -13,27 +13,16 @@ function Footer() {
   const { user, setUser } = useContext(CurrentUserContext);
   const navigate = useNavigate();
 
-  const handleDisconnect = () => {
-    axiosAPI
-      .get(`${import.meta.env.VITE_BACKEND_URL}/api/auth/logout`)
-      .then(() => {
-        localStorage.clear();
-        setUser(undefined);
-        toast.warning("Tu es déconnecté !");
-      })
-      .catch((err) => toast.error(err.message));
+  const handleDisconnect = async () => {
+    try {
+      await axiosAPI.get(`${import.meta.env.VITE_BACKEND_URL}/api/auth/logout`);
+      localStorage.clear();
+      setUser(undefined);
+      toast.warning("Tu es déconnecté !");
+    } catch (err) {
+      toast.error(err.message);
+    }
   };
-
-  // const handleDisconnect = () => {
-  //   axiosAPI
-  //     .get(`${import.meta.env.VITE_BACKEND_URL}/api/auth/logout`)
-  //     .then(() => {
-  //       localStorage.clear();
-  //       setUser(undefined);
-  //       toast.warning("Tu es déconnecté !");
-  //     })
-  //     .catch((err) => toast.error(err.message));
-  // };
 
   return (
     <footer className="flex flex-col h-[20vh]">

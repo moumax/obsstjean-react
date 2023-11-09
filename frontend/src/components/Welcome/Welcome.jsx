@@ -6,7 +6,9 @@ function Welcome() {
   return (
     <>
       {user && (
-        <div className="text-red-600 text-2xl">{user.name} tu est connecté</div>
+        <div className="text-orange-400 text-sm">
+          {user.name}, tu est connecté
+        </div>
       )}
       <div />
     </>

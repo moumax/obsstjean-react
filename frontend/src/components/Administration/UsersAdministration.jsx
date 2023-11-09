@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { CircleLoader } from "react-spinners";
 import CardUser from "./CardUser";
 import axiosAPI from "../../services/axiosAPI";
 import CurrentUserContext from "../../contexts/userContext";
@@ -26,15 +27,19 @@ export default function UsersAdministration() {
 
   if (!users) {
     return (
-      <p className="h-screen text-red-600 text-4xl">Il y&apos;a une erreur</p>
+      <p className="h-screen text-red-600 text-4xl">
+        Erreur server lors de la récupération des utilisateurs
+      </p>
     );
   }
 
   return (
     <section className="w-full mt-[1rem] flex flex-col items-center min-h-screen">
-      <h2 className="text-white text-[2rem]">Liste des utilisateurs</h2>
+      <h2 className="text-white text-[2rem] mb-10">Liste des utilisateurs</h2>
       {isLoading ? (
-        <p>Loading...</p>
+        <p>
+          <CircleLoader className="mt-10" color="#e9e700" />
+        </p>
       ) : (
         users.map((us) => (
           <div key={us.id}>

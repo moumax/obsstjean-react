@@ -1,5 +1,3 @@
-import { CalendarDays, HeartHandshake, HelpCircle, Home } from "lucide-react";
-
 import logo from "../../assets/logo/logo.png";
 import coupole from "../../assets/logo/coupole.jpg";
 // eslint-disable-next-line import/no-named-as-default
@@ -9,39 +7,12 @@ import Observatoire from "../Observatoire/Observatoire";
 
 import "./Header.css";
 import "../../index.css";
+import Navbar from "../Navbar/Navbar";
 
 function Header() {
-  // const [show, setShow] = useState(false);
-
   return (
     <header id="home" className="w-[95%] h-screen flex flex-col items-center">
-      <nav
-        className="-right-2 w-fit flex justify-end mt-4 fixed mr-8 bg-yellow-400 rounded-md p-1 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10
-"
-      >
-        <ul className="flex text-white gap-3 z-50">
-          <li>
-            <a href="#home">
-              <Home size={28} strokeWidth={1} color="orange" />
-            </a>
-          </li>
-          <li>
-            <a href="#activity">
-              <HelpCircle size={28} strokeWidth={1} color="orange" />
-            </a>
-          </li>
-          <li>
-            <a href="#calendar">
-              <CalendarDays size={28} strokeWidth={1} color="orange" />
-            </a>
-          </li>
-          <li>
-            <a href="#contact">
-              <HeartHandshake size={28} strokeWidth={1} color="orange" />
-            </a>
-          </li>
-        </ul>
-      </nav>
+      <Navbar />
       <div className="flex items-center gap-[2vw] mb-[2vh]">
         <img
           className="h-[25vh] mt-4 z-50"
